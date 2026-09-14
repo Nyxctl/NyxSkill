@@ -10,7 +10,7 @@ Requires Node.js 20+ only; there are **zero runtime dependencies**.
 npm run build
 node dist/src/cli.js doctor
 node dist/src/cli.js list
-node dist/src/cli.js route "Chrome extension login broke after API update" --runtime inwjud --explain
+node dist/src/cli.js route "Chrome extension login broke after API update" --runtime Codex --explain
 node dist/src/cli.js build --all --out ./dist/runtimes
 ```
 
