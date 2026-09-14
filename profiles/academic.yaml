@@ -1,0 +1,18 @@
+{
+  "id": "academic",
+  "name": "Academic",
+  "includes": [
+    "research",
+    "documents"
+  ],
+  "triggers": {
+    "keywords": [
+      "paper",
+      "academic",
+      "citation",
+      "methodology",
+      "reviewer",
+      "thesis"
+    ]
+  }
+}

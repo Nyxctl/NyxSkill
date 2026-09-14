@@ -1,0 +1,23 @@
+{
+  "id": "nyx.research",
+  "name": "Nyx Research Pack",
+  "version": "1.0.0",
+  "api_version": 1,
+  "namespace": "nyx.research",
+  "profiles": [
+    "research"
+  ],
+  "skills": [
+    "nyx.research.literature-search",
+    "nyx.research.prior-art-survey",
+    "nyx.research.project-document-discovery",
+    "nyx.research.research-synthesis",
+    "nyx.research.source-verification",
+    "nyx.research.web-scraping"
+  ],
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  },
+  "trust": "first-party"
+}

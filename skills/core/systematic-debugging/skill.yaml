@@ -1,0 +1,73 @@
+{
+  "id": "nyx.core.systematic-debugging",
+  "name": "Systematic Debugging",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "core.systematic-debugging",
+  "type": "process",
+  "profiles": [
+    "coding",
+    "browser-extension",
+    "data-ai",
+    "universal"
+  ],
+  "description": "Find root cause before changing behavior, using reproducible evidence and hypothesis-driven checks.",
+  "routing": {
+    "priority": 98,
+    "triggers": {
+      "keywords": [
+        "bug",
+        "crash",
+        "broken",
+        "broke",
+        "regression",
+        "error",
+        "failure"
+      ],
+      "intents": [
+        "debug"
+      ]
+    },
+    "exclusive_group": "debugging-process"
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write",
+      "shell",
+      "test_runner"
+    ]
+  },
+  "risk": {
+    "level": "safe-write",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "superpowers",
+    "adapted_from": "systematic-debugging",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

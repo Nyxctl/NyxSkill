@@ -1,0 +1,63 @@
+{
+  "id": "nyx.research.prior-art-survey",
+  "name": "Prior Art Survey",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "research.prior-art-survey",
+  "type": "domain",
+  "profiles": [
+    "research"
+  ],
+  "description": "Survey prior art systematically, compare approaches and constraints, and identify meaningful novelty gaps.",
+  "routing": {
+    "priority": 74,
+    "triggers": {
+      "keywords": [
+        "prior art",
+        "existing solutions",
+        "competitive research"
+      ],
+      "intents": [
+        "research"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "network.http"
+    ]
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "agent-skills",
+    "adapted_from": "code-prior-art-survey",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

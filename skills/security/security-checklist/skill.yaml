@@ -1,0 +1,64 @@
+{
+  "id": "nyx.security.security-checklist",
+  "name": "Security Checklist",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "security.security-checklist",
+  "type": "policy",
+  "profiles": [
+    "security",
+    "coding",
+    "browser-extension"
+  ],
+  "description": "Run a structured application security checklist and separate blocking findings from hardening opportunities.",
+  "routing": {
+    "priority": 78,
+    "triggers": {
+      "keywords": [
+        "security checklist",
+        "security audit"
+      ],
+      "intents": [
+        "security-review"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "network.http"
+    ]
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "journalism",
+    "adapted_from": "security-checklist",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

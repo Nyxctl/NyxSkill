@@ -1,0 +1,22 @@
+{
+  "id": "nyx.devops",
+  "name": "Nyx Devops Pack",
+  "version": "1.0.0",
+  "api_version": 1,
+  "namespace": "nyx.devops",
+  "profiles": [
+    "devops"
+  ],
+  "skills": [
+    "nyx.devops.cloudflare-pages-ops",
+    "nyx.devops.deployment-review",
+    "nyx.devops.jenkins-rest-ops",
+    "nyx.devops.netlify-ops",
+    "nyx.devops.release-check"
+  ],
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  },
+  "trust": "first-party"
+}

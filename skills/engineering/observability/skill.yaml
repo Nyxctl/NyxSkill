@@ -1,0 +1,66 @@
+{
+  "id": "nyx.engineering.observability",
+  "name": "Observability",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "engineering.observability",
+  "type": "domain",
+  "profiles": [
+    "coding"
+  ],
+  "description": "Design useful logs, metrics, traces, and operational signals around failure modes and user outcomes.",
+  "routing": {
+    "priority": 70,
+    "triggers": {
+      "keywords": [
+        "observability",
+        "logging",
+        "metrics",
+        "tracing"
+      ],
+      "intents": [
+        "review"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write",
+      "shell",
+      "test_runner"
+    ]
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "skill.md-main",
+    "adapted_from": "observability-and-instrumentation",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

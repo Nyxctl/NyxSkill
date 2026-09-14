@@ -1,0 +1,66 @@
+{
+  "id": "nyx.engineering.performance-optimization",
+  "name": "Performance Optimization",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "engineering.performance-optimization",
+  "type": "domain",
+  "profiles": [
+    "coding"
+  ],
+  "description": "Measure before optimizing, identify bottlenecks, and validate performance gains without correctness regressions.",
+  "routing": {
+    "priority": 70,
+    "triggers": {
+      "keywords": [
+        "performance",
+        "slow",
+        "latency",
+        "memory"
+      ],
+      "intents": [
+        "review"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write",
+      "shell",
+      "test_runner"
+    ]
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "skill.md-main",
+    "adapted_from": "performance-optimization",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

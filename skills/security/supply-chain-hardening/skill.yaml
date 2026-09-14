@@ -1,0 +1,65 @@
+{
+  "id": "nyx.security.supply-chain-hardening",
+  "name": "Supply Chain Hardening",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "security.supply-chain-hardening",
+  "type": "policy",
+  "profiles": [
+    "security",
+    "coding",
+    "browser-extension"
+  ],
+  "description": "Reduce dependency and build-chain risk through pinning, provenance, least privilege, audits, and reproducible release controls.",
+  "routing": {
+    "priority": 78,
+    "triggers": {
+      "keywords": [
+        "supply chain",
+        "dependency security",
+        "package security"
+      ],
+      "intents": [
+        "security-review"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "network.http"
+    ]
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "journalism",
+    "adapted_from": "supply-chain-hardening",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

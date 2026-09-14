@@ -1,0 +1,64 @@
+{
+  "id": "nyx.documents.user-guide",
+  "name": "User Guide",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "documents.user-guide",
+  "type": "domain",
+  "profiles": [
+    "documents",
+    "academic"
+  ],
+  "description": "Write user-facing guidance organized around goals, prerequisites, steps, expected results, errors, and recovery.",
+  "routing": {
+    "priority": 70,
+    "triggers": {
+      "keywords": [
+        "user guide",
+        "help documentation"
+      ],
+      "intents": [
+        "document",
+        "author"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write"
+    ]
+  },
+  "risk": {
+    "level": "safe-write",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "agent-skills",
+    "adapted_from": "authoring-user-guide",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

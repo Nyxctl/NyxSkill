@@ -1,0 +1,49 @@
+{
+  "sources": {
+    "superpowers": {
+      "type": "archive",
+      "archive": "superpowers-6.3.0.zip",
+      "version": "6.3.0",
+      "sha256": "3d4b48b75d6ea46047183b73938088cbf22196518b3c46873446a5ff11b02104",
+      "license": "MIT",
+      "original_author": "Jesse Vincent",
+      "reviewed_at": "2026-09-14"
+    },
+    "browser-extension-skills": {
+      "type": "archive",
+      "archive": "browser-extension-skills-main.zip",
+      "version": "2026-09-11",
+      "sha256": "de3184071b656464edb92884d223eba22a54fb4f84287dfe6f0cf91fa6939d21",
+      "license": "MIT",
+      "original_author": "browser-extension-skills contributors",
+      "reviewed_at": "2026-09-14"
+    },
+    "skill.md-main": {
+      "type": "archive",
+      "archive": "skill.md-main.zip",
+      "version": "2026-06-11",
+      "sha256": "98cee77e90a2ad23e85c8c9d5da9b7b37d9df540eb7cec9d34bd7a493bd4c581",
+      "license": "MIT",
+      "original_author": "Addy Osmani",
+      "reviewed_at": "2026-09-14"
+    },
+    "agent-skills": {
+      "type": "archive",
+      "archive": "agent-skills-main.zip",
+      "version": "2026-09-07",
+      "sha256": "86c36d0b67177eb26825f295a0fe2fd881911edeb801f8cf022df4fdf8541eb5",
+      "license": "MIT",
+      "original_author": "Bhushan Modi",
+      "reviewed_at": "2026-09-14"
+    },
+    "journalism": {
+      "type": "archive",
+      "archive": "claude-skills-journalism-2.7.3.zip",
+      "version": "2.7.3",
+      "sha256": "e46f99fd4222865a6bab9351e19d17c52ef75f7ee748479e97132d7ce4c7fa86",
+      "license": "MIT",
+      "original_author": "Joe Amditis",
+      "reviewed_at": "2026-09-14"
+    }
+  }
+}

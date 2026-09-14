@@ -1,0 +1,63 @@
+{
+  "id": "nyx.research.literature-search",
+  "name": "Literature Search",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "research.literature-search",
+  "type": "domain",
+  "profiles": [
+    "research"
+  ],
+  "description": "Build a focused literature search strategy, collect relevant sources, record queries, and prioritize directly comparable work.",
+  "routing": {
+    "priority": 74,
+    "triggers": {
+      "keywords": [
+        "literature",
+        "papers",
+        "related work"
+      ],
+      "intents": [
+        "research"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "network.http"
+    ]
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "nyx-native",
+    "source": null,
+    "adapted_from": null,
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "nyx.data-ai",
+  "name": "Nyx Data Ai Pack",
+  "version": "1.0.0",
+  "api_version": 1,
+  "namespace": "nyx.data-ai",
+  "profiles": [
+    "data-ai"
+  ],
+  "skills": [
+    "nyx.data-ai.dataset-audit",
+    "nyx.data-ai.ml-experiment-design",
+    "nyx.data-ai.ml-prior-art",
+    "nyx.data-ai.model-evaluation",
+    "nyx.data-ai.python-data-pipeline"
+  ],
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  },
+  "trust": "first-party"
+}

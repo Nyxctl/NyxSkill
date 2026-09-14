@@ -1,0 +1,64 @@
+{
+  "id": "nyx.devops.netlify-ops",
+  "name": "Netlify Ops",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "devops.netlify-ops",
+  "type": "domain",
+  "profiles": [
+    "devops"
+  ],
+  "description": "Operate Netlify deployments with build configuration, previews, environment variables, redirects, domains, and rollback checks.",
+  "routing": {
+    "priority": 78,
+    "triggers": {
+      "keywords": [
+        "netlify",
+        "netlify deploy"
+      ],
+      "intents": [
+        "release"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "network.http",
+      "deployment",
+      "shell"
+    ]
+  },
+  "risk": {
+    "level": "privileged",
+    "destructive": false,
+    "requires_confirmation": true
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "agent-skills",
+    "adapted_from": "netlify-ops",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

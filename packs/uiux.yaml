@@ -1,0 +1,24 @@
+{
+  "id": "nyx.uiux",
+  "name": "Nyx Uiux Pack",
+  "version": "1.0.0",
+  "api_version": 1,
+  "namespace": "nyx.uiux",
+  "profiles": [
+    "ui-ux"
+  ],
+  "skills": [
+    "nyx.uiux.accessibility-compliance",
+    "nyx.uiux.design-system",
+    "nyx.uiux.frontend-ui-engineering",
+    "nyx.uiux.hi-fi",
+    "nyx.uiux.ui-illustrations",
+    "nyx.uiux.web-ui-best-practices",
+    "nyx.uiux.wireframes"
+  ],
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  },
+  "trust": "first-party"
+}

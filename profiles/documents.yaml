@@ -1,0 +1,16 @@
+{
+  "id": "documents",
+  "name": "Documents",
+  "includes": [],
+  "triggers": {
+    "keywords": [
+      "document",
+      "docs",
+      "docx",
+      "pdf",
+      "rewrite",
+      "guide",
+      "reference"
+    ]
+  }
+}

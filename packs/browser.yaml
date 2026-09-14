@@ -1,0 +1,28 @@
+{
+  "id": "nyx.browser",
+  "name": "Nyx Browser Pack",
+  "version": "1.0.0",
+  "api_version": 1,
+  "namespace": "nyx.browser",
+  "profiles": [
+    "browser-extension"
+  ],
+  "skills": [
+    "nyx.browser.extension-analyze",
+    "nyx.browser.extension-assets",
+    "nyx.browser.extension-backend",
+    "nyx.browser.extension-create",
+    "nyx.browser.extension-dev",
+    "nyx.browser.extension-manifest",
+    "nyx.browser.extension-migration",
+    "nyx.browser.extension-publish",
+    "nyx.browser.extension-review",
+    "nyx.browser.extension-test",
+    "nyx.browser.extension-ui"
+  ],
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  },
+  "trust": "first-party"
+}

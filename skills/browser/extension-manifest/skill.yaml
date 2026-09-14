@@ -1,0 +1,65 @@
+{
+  "id": "nyx.browser.extension-manifest",
+  "name": "Extension Manifest",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "browser.extension-manifest",
+  "type": "domain",
+  "profiles": [
+    "browser-extension"
+  ],
+  "description": "Design and review Manifest V3 permissions, host access, service workers, CSP, commands, content scripts, and browser compatibility.",
+  "routing": {
+    "priority": 75,
+    "triggers": {
+      "keywords": [
+        "extension",
+        "manifest"
+      ],
+      "intents": [
+        "develop-extension"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write",
+      "browser.dom",
+      "browser.visual",
+      "test_runner"
+    ]
+  },
+  "risk": {
+    "level": "safe-write",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "browser-extension-skills",
+    "adapted_from": "extension-manifest",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

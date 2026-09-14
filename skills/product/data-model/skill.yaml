@@ -1,0 +1,61 @@
+{
+  "id": "nyx.product.data-model",
+  "name": "Data Model",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "product.data-model",
+  "type": "domain",
+  "profiles": [
+    "product"
+  ],
+  "description": "Design data entities, relationships, invariants, lifecycle, indexing, migration, and ownership.",
+  "routing": {
+    "priority": 76,
+    "triggers": {
+      "keywords": [
+        "data model",
+        "schema design",
+        "database model"
+      ],
+      "intents": [
+        "author"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": []
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "agent-skills",
+    "adapted_from": "authoring-data-model",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

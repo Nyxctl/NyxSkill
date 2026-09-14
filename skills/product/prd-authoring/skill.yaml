@@ -1,0 +1,60 @@
+{
+  "id": "nyx.product.prd-authoring",
+  "name": "Prd Authoring",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "product.prd-authoring",
+  "type": "domain",
+  "profiles": [
+    "product"
+  ],
+  "description": "Write a decision-ready product requirements document with problem, users, scope, success metrics, risks, and non-goals.",
+  "routing": {
+    "priority": 76,
+    "triggers": {
+      "keywords": [
+        "prd",
+        "product requirements"
+      ],
+      "intents": [
+        "author"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": []
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "agent-skills",
+    "adapted_from": "authoring-prd",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

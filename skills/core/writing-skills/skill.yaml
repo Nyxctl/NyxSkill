@@ -1,0 +1,64 @@
+{
+  "id": "nyx.core.writing-skills",
+  "name": "Writing Skills",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "core.writing-skills",
+  "type": "domain",
+  "profiles": [
+    "coding",
+    "product"
+  ],
+  "description": "Design, write, test, and review reusable agent skills with clear triggers, scope, workflow, and verification.",
+  "routing": {
+    "priority": 80,
+    "triggers": {
+      "keywords": [
+        "skill authoring",
+        "write skill",
+        "skill.md"
+      ],
+      "intents": [
+        "author"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write"
+    ]
+  },
+  "risk": {
+    "level": "safe-write",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "superpowers",
+    "adapted_from": "writing-skills",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

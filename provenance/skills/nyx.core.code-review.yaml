@@ -1,0 +1,14 @@
+{
+  "skill": "nyx.core.code-review",
+  "origin": "adapted",
+  "source": "superpowers",
+  "upstream_skill": "requesting-code-review",
+  "upstream_version": null,
+  "license": "MIT",
+  "changes": [
+    "normalized to NyxSkill canonical schema",
+    "added deterministic routing metadata",
+    "added capability/risk declarations",
+    "rewritten as cross-runtime Nyx workflow"
+  ]
+}

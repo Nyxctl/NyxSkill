@@ -1,0 +1,61 @@
+{
+  "id": "nyx.product.user-flows",
+  "name": "User Flows",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "product.user-flows",
+  "type": "domain",
+  "profiles": [
+    "product"
+  ],
+  "description": "Map user goals into screens, decisions, alternate paths, errors, and completion states.",
+  "routing": {
+    "priority": 76,
+    "triggers": {
+      "keywords": [
+        "user flow",
+        "journey",
+        "interaction flow"
+      ],
+      "intents": [
+        "ui-design"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": []
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "agent-skills",
+    "adapted_from": "authoring-user-flows",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

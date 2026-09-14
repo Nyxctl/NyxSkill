@@ -1,0 +1,14 @@
+{
+  "skill": "nyx.security.supply-chain-hardening",
+  "origin": "adapted",
+  "source": "journalism",
+  "upstream_skill": "supply-chain-hardening",
+  "upstream_version": null,
+  "license": "MIT",
+  "changes": [
+    "normalized to NyxSkill canonical schema",
+    "added deterministic routing metadata",
+    "added capability/risk declarations",
+    "rewritten as cross-runtime Nyx workflow"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "id": "nyx.engineering.rest-api-design",
+  "name": "Rest Api Design",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "engineering.rest-api-design",
+  "type": "domain",
+  "profiles": [
+    "coding"
+  ],
+  "description": "Design REST resources, methods, status codes, pagination, idempotency, errors, and versioning coherently.",
+  "routing": {
+    "priority": 70,
+    "triggers": {
+      "keywords": [
+        "rest",
+        "rest api",
+        "resource api"
+      ],
+      "intents": [
+        "api-design"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write",
+      "shell",
+      "test_runner"
+    ]
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "agent-skills",
+    "adapted_from": "rest-api-design",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

@@ -1,0 +1,576 @@
+{
+  "lockfile_version": 1,
+  "nyxskill_version": "1.0.0",
+  "api_version": 1,
+  "sources": {
+    "superpowers": {
+      "type": "archive",
+      "archive": "superpowers-6.3.0.zip",
+      "version": "6.3.0",
+      "sha256": "3d4b48b75d6ea46047183b73938088cbf22196518b3c46873446a5ff11b02104",
+      "license": "MIT",
+      "original_author": "Jesse Vincent",
+      "reviewed_at": "2026-09-14"
+    },
+    "browser-extension-skills": {
+      "type": "archive",
+      "archive": "browser-extension-skills-main.zip",
+      "version": "2026-09-11",
+      "sha256": "de3184071b656464edb92884d223eba22a54fb4f84287dfe6f0cf91fa6939d21",
+      "license": "MIT",
+      "original_author": "browser-extension-skills contributors",
+      "reviewed_at": "2026-09-14"
+    },
+    "skill.md-main": {
+      "type": "archive",
+      "archive": "skill.md-main.zip",
+      "version": "2026-06-11",
+      "sha256": "98cee77e90a2ad23e85c8c9d5da9b7b37d9df540eb7cec9d34bd7a493bd4c581",
+      "license": "MIT",
+      "original_author": "Addy Osmani",
+      "reviewed_at": "2026-09-14"
+    },
+    "agent-skills": {
+      "type": "archive",
+      "archive": "agent-skills-main.zip",
+      "version": "2026-09-07",
+      "sha256": "86c36d0b67177eb26825f295a0fe2fd881911edeb801f8cf022df4fdf8541eb5",
+      "license": "MIT",
+      "original_author": "Bhushan Modi",
+      "reviewed_at": "2026-09-14"
+    },
+    "journalism": {
+      "type": "archive",
+      "archive": "claude-skills-journalism-2.7.3.zip",
+      "version": "2.7.3",
+      "sha256": "e46f99fd4222865a6bab9351e19d17c52ef75f7ee748479e97132d7ce4c7fa86",
+      "license": "MIT",
+      "original_author": "Joe Amditis",
+      "reviewed_at": "2026-09-14"
+    }
+  },
+  "skills": {
+    "nyx.core.brainstorming": {
+      "origin": "adapted",
+      "source": "superpowers",
+      "upstream_skill": "brainstorming",
+      "local_hash": "sha256:bd81960b3f235305cf7b33ce4c89533aa7541af6b613ceac1d41ab8b3442a7a5"
+    },
+    "nyx.core.writing-plans": {
+      "origin": "adapted",
+      "source": "superpowers",
+      "upstream_skill": "writing-plans",
+      "local_hash": "sha256:64c69bfb6a7a2603be50ca321cdb5a67f1e22943027a5690bf0b0afcd86b83dd"
+    },
+    "nyx.core.systematic-debugging": {
+      "origin": "adapted",
+      "source": "superpowers",
+      "upstream_skill": "systematic-debugging",
+      "local_hash": "sha256:f4d2920d8e79950a60ee8a1f95d036202af64cc5c0d03e6bb79bc8466c35c250"
+    },
+    "nyx.core.test-driven-development": {
+      "origin": "adapted",
+      "source": "superpowers",
+      "upstream_skill": "test-driven-development",
+      "local_hash": "sha256:c81979916bc6883db3227157dbe274bcfed1abfc4c72960ddd4a182b76b9dec1"
+    },
+    "nyx.core.verification": {
+      "origin": "adapted",
+      "source": "superpowers",
+      "upstream_skill": "verification-before-completion",
+      "local_hash": "sha256:6f0c5674b1cad9651c2dfafce73f62e2c5946f4cba316b5aa61f5b6536ed62e2"
+    },
+    "nyx.core.code-review": {
+      "origin": "adapted",
+      "source": "superpowers",
+      "upstream_skill": "requesting-code-review",
+      "local_hash": "sha256:3d31400c79851ce55e78db4026463b21a4ba809831c49b8f7fd4670e2b9091ea"
+    },
+    "nyx.core.git-worktrees": {
+      "origin": "adapted",
+      "source": "superpowers",
+      "upstream_skill": "using-git-worktrees",
+      "local_hash": "sha256:d2227854a7a874154f93a9ef94bf10f02adbd32eddcad49165fc07f927abae6d"
+    },
+    "nyx.core.executing-plans": {
+      "origin": "adapted",
+      "source": "superpowers",
+      "upstream_skill": "executing-plans",
+      "local_hash": "sha256:c7a7df70e849785cd867ea28f1e8484e2f3fd09d035810f962b110e5271f2c83"
+    },
+    "nyx.core.writing-skills": {
+      "origin": "adapted",
+      "source": "superpowers",
+      "upstream_skill": "writing-skills",
+      "local_hash": "sha256:3193b7220933e2b2c9b5dc49cef7d3299754ba079c3fbcbfb1bc5cbd56e4d127"
+    },
+    "nyx.core.context-engineering": {
+      "origin": "adapted",
+      "source": "skill.md-main",
+      "upstream_skill": "context-engineering",
+      "local_hash": "sha256:7a2e16a857e1748dc545bb33e40db6bdb0d25534068c972d2e079749b831cd59"
+    },
+    "nyx.engineering.api-design": {
+      "origin": "adapted",
+      "source": "skill.md-main",
+      "upstream_skill": "api-and-interface-design",
+      "local_hash": "sha256:a9fc453b0b02a0589a6a48f45dd0f07a734a78b58d04b9fe1c42bf21f6e22c89"
+    },
+    "nyx.engineering.code-simplification": {
+      "origin": "adapted",
+      "source": "skill.md-main",
+      "upstream_skill": "code-simplification",
+      "local_hash": "sha256:58dab03eaa964522bac55933224437fb82ed6c2315a07fec69b32b965b3583e7"
+    },
+    "nyx.engineering.observability": {
+      "origin": "adapted",
+      "source": "skill.md-main",
+      "upstream_skill": "observability-and-instrumentation",
+      "local_hash": "sha256:c3858333aefaf3aac6eb84e624d37da1a3a6eb93fb9a38e7af32e4e7c59f8a2f"
+    },
+    "nyx.engineering.performance-optimization": {
+      "origin": "adapted",
+      "source": "skill.md-main",
+      "upstream_skill": "performance-optimization",
+      "local_hash": "sha256:bbb66aae5087a20ba6f891991e042f1d7d05a036fba811fea38d968e4d89594e"
+    },
+    "nyx.engineering.deprecation-migration": {
+      "origin": "adapted",
+      "source": "skill.md-main",
+      "upstream_skill": "deprecation-and-migration",
+      "local_hash": "sha256:b6853fd4e4d3c07381b1b268e6d62df76d0f68f8ef7ad6ec3d2a626a0fc3fe8f"
+    },
+    "nyx.engineering.typescript-typecheck": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "typescript-typecheck",
+      "local_hash": "sha256:ce684692937ad8d523fb31b666b67474a5b8cc3b2cda210650037a47bb1d8a1b"
+    },
+    "nyx.engineering.react-component-testing": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "react-component-testing",
+      "local_hash": "sha256:f4df676d8f96fd8e1cd16248ca640c91cec46146504914de247229a024a19b2a"
+    },
+    "nyx.engineering.rest-api-design": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "rest-api-design",
+      "local_hash": "sha256:d0884afbdb4f5a4257aa5e51f2b612de436744d333bfc07fe0bb0e6586d9a7e9"
+    },
+    "nyx.engineering.openapi-ts-client": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "openapi-ts-client",
+      "local_hash": "sha256:d0bfb0d8bf3c9abbe75f102c1d3f5a063e3036c42599d67a04d655ee1b1fa0fc"
+    },
+    "nyx.engineering.python-pipeline": {
+      "origin": "adapted",
+      "source": "journalism",
+      "upstream_skill": "python-pipeline",
+      "local_hash": "sha256:e209a47d317bc8956870f08180c56a7a6190eea0914edca560f7d09b3b142f64"
+    },
+    "nyx.engineering.documentation-adrs": {
+      "origin": "adapted",
+      "source": "skill.md-main",
+      "upstream_skill": "documentation-and-adrs",
+      "local_hash": "sha256:7cee9adf6b79921bb32e17b24dc27cf26d03990ef12cef8f4b34f6c99c797ea1"
+    },
+    "nyx.product.requirements-analysis": {
+      "origin": "nyx-native",
+      "source": null,
+      "upstream_skill": null,
+      "local_hash": "sha256:c3c394e93a4f1384d90df3f6534345c21310819c36c830b410bef0c7b8c14638"
+    },
+    "nyx.product.prd-authoring": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "authoring-prd",
+      "local_hash": "sha256:11c130aedeb119516acd281d68f3d6c6074c5c11c68f3d763ac9590c9d1a1cce"
+    },
+    "nyx.product.feature-spec": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "authoring-feature-spec",
+      "local_hash": "sha256:dd9871be64533d3e1d0524daade273c6a75b8883c184d0c204430a3635ab977a"
+    },
+    "nyx.product.technical-design": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "authoring-technical-design",
+      "local_hash": "sha256:f2c77307e70b1fc17b77d27af12167c967e576f5922d2dc667e98ed310483d82"
+    },
+    "nyx.product.architecture-doc": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "authoring-architecture-doc",
+      "local_hash": "sha256:e14658404b85dc4667e11c6201b738f4e6b940ce38f6acf21b4c8b289c2a7445"
+    },
+    "nyx.product.data-model": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "authoring-data-model",
+      "local_hash": "sha256:2bb68d0224d44d16af5602f7048f550109742c8b67fa05efe9cec1ddea4daa88"
+    },
+    "nyx.product.test-plan": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "authoring-test-plan",
+      "local_hash": "sha256:a95a95e978b6c03d89f85e7bc7d8191dd6b880c5154e0e149df5281d368c7525"
+    },
+    "nyx.product.release-runbook": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "authoring-release-runbook",
+      "local_hash": "sha256:212d1d79f88caec0ede60c2bdeaaf7b688fc533697e8694f3d5ebe648855d7a6"
+    },
+    "nyx.product.user-flows": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "authoring-user-flows",
+      "local_hash": "sha256:865ea99001bf577868bdf581291b55350d059beae1228f475af1d49d3b4c25bb"
+    },
+    "nyx.product.design-review": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "design-review",
+      "local_hash": "sha256:894da2b94ee95feb76680ad74593307c66825e036c2ec244210088f8bd36ade3"
+    },
+    "nyx.browser.extension-analyze": {
+      "origin": "adapted",
+      "source": "browser-extension-skills",
+      "upstream_skill": "extension-analyze",
+      "local_hash": "sha256:9773e2a55c8a274d835439f1718277bfeacbf1dee574d2e208faf6c2e2ff8477"
+    },
+    "nyx.browser.extension-create": {
+      "origin": "adapted",
+      "source": "browser-extension-skills",
+      "upstream_skill": "extension-create",
+      "local_hash": "sha256:d137cace05b1a1bc294f55575b86fa2b3eba44148e6f88bd4c08a3dcb30cbab6"
+    },
+    "nyx.browser.extension-dev": {
+      "origin": "adapted",
+      "source": "browser-extension-skills",
+      "upstream_skill": "extension-dev",
+      "local_hash": "sha256:0919198aa9a5af25e2c2dc139ccd4236ce5443234cbf5fe09ccb3e19a644a95e"
+    },
+    "nyx.browser.extension-manifest": {
+      "origin": "adapted",
+      "source": "browser-extension-skills",
+      "upstream_skill": "extension-manifest",
+      "local_hash": "sha256:5331b49f444f52c18fd1ccccfa8443cbd2d67b4f7f87ca44c319bb73d3097a74"
+    },
+    "nyx.browser.extension-migration": {
+      "origin": "adapted",
+      "source": "browser-extension-skills",
+      "upstream_skill": "extension-migration",
+      "local_hash": "sha256:d7fc13f3387c71962431996187ea33751e971b2d2c6e15567c3a7fabd063e939"
+    },
+    "nyx.browser.extension-test": {
+      "origin": "adapted",
+      "source": "browser-extension-skills",
+      "upstream_skill": "extension-test",
+      "local_hash": "sha256:e394e7c34b9adba28564dee76525974178352457bc63d44041b5f45088e17b4e"
+    },
+    "nyx.browser.extension-ui": {
+      "origin": "adapted",
+      "source": "browser-extension-skills",
+      "upstream_skill": "extension-ui",
+      "local_hash": "sha256:502a5ce91fd809bc2d65ecadbe7a176135de59fb1afab1d07dba894571b69935"
+    },
+    "nyx.browser.extension-review": {
+      "origin": "adapted",
+      "source": "browser-extension-skills",
+      "upstream_skill": "extension-review",
+      "local_hash": "sha256:0c45f3413d398add0b923ab4f322bcccea5b970e6e3175768e5ba18c02bc9cc9"
+    },
+    "nyx.browser.extension-publish": {
+      "origin": "adapted",
+      "source": "browser-extension-skills",
+      "upstream_skill": "extension-publish",
+      "local_hash": "sha256:a617aad510a3cc9853bfb09a8437f7fb84fb2b213fd172ebe29c6e835ab8917c"
+    },
+    "nyx.browser.extension-backend": {
+      "origin": "adapted",
+      "source": "browser-extension-skills",
+      "upstream_skill": "extension-backend",
+      "local_hash": "sha256:7be9a2e78b9cce6ed0dfc5a35e8f8a5c218b889b55374846ec00695e9adde9e0"
+    },
+    "nyx.browser.extension-assets": {
+      "origin": "adapted",
+      "source": "browser-extension-skills",
+      "upstream_skill": "extension-assets",
+      "local_hash": "sha256:78e6957f03cbb0e74668af4beb76c9b1d8e3439745d1c35bf66abe64ebac355a"
+    },
+    "nyx.uiux.frontend-ui-engineering": {
+      "origin": "adapted",
+      "source": "skill.md-main",
+      "upstream_skill": "frontend-ui-engineering",
+      "local_hash": "sha256:0ad6bde875eee92969a3cc970bebbbe41fe14657122fae38ad321534855de4cb"
+    },
+    "nyx.uiux.web-ui-best-practices": {
+      "origin": "adapted",
+      "source": "journalism",
+      "upstream_skill": "web-ui-best-practices",
+      "local_hash": "sha256:fc57723ed488a39d24c7df2aaab1060b6f0a9c46f54233c433e69f570ec4dad0"
+    },
+    "nyx.uiux.accessibility-compliance": {
+      "origin": "adapted",
+      "source": "journalism",
+      "upstream_skill": "accessibility-compliance",
+      "local_hash": "sha256:f0784d0126a43c03fb7a6f178547cd3757c0b5eb2e9503c93c0daccefef3ed78"
+    },
+    "nyx.uiux.design-system": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "authoring-design-system",
+      "local_hash": "sha256:fdb393ad0794fd407618554cad8244a9c66b7f1d739d94c41ea1cd02bae0a51c"
+    },
+    "nyx.uiux.wireframes": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "authoring-wireframes",
+      "local_hash": "sha256:432492747240dcb4ef556b7aea6a95ca7ee56d530587e0207d48652012c6817b"
+    },
+    "nyx.uiux.hi-fi": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "authoring-hi-fi",
+      "local_hash": "sha256:781b98488a2dac93335ced280b7fd8111a902aaa03ab85100f232e9894c5895c"
+    },
+    "nyx.uiux.ui-illustrations": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "ui-illustrations",
+      "local_hash": "sha256:13a265e2917d08234fd989b6a152a06645dd6345b2c611f19482a845ab201aeb"
+    },
+    "nyx.security.security-review": {
+      "origin": "nyx-native",
+      "source": null,
+      "upstream_skill": null,
+      "local_hash": "sha256:86f4e14bb387efd9cd74e41e6c8b83192fb3c07fa0c8628c1c0a9a0c35ce8751"
+    },
+    "nyx.security.secure-auth": {
+      "origin": "adapted",
+      "source": "journalism",
+      "upstream_skill": "secure-auth",
+      "local_hash": "sha256:a0b04ab4705ae6131d58a368a0f9dca10bd4d2de3ac129ff056369c22e739d0a"
+    },
+    "nyx.security.api-hardening": {
+      "origin": "adapted",
+      "source": "journalism",
+      "upstream_skill": "api-hardening",
+      "local_hash": "sha256:0e233fb0416ff6f1348567af46dd8804a026950f9457a454303145369931b5a7"
+    },
+    "nyx.security.supply-chain-hardening": {
+      "origin": "adapted",
+      "source": "journalism",
+      "upstream_skill": "supply-chain-hardening",
+      "local_hash": "sha256:3c1fd5a125d8d402fcd566ba8a761546819af836b5be4b21898515e6b0a08d5a"
+    },
+    "nyx.security.security-checklist": {
+      "origin": "adapted",
+      "source": "journalism",
+      "upstream_skill": "security-checklist",
+      "local_hash": "sha256:07a92ef51555c4ac2ea693a9aa2c81c8d54f7da72c7e1a843d2c7ef31e360cf7"
+    },
+    "nyx.security.external-content-sanitizer": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "external-content-sanitizer",
+      "local_hash": "sha256:21c28abba0e568a4dbdc44cdc36a39a62227b3b6f9ddf1b5ffcb10196ae15a5f"
+    },
+    "nyx.research.literature-search": {
+      "origin": "nyx-native",
+      "source": null,
+      "upstream_skill": null,
+      "local_hash": "sha256:48369a7295740e9e247c6de7530129a3fe02b63c99545dc5da7059144290f287"
+    },
+    "nyx.research.prior-art-survey": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "code-prior-art-survey",
+      "local_hash": "sha256:e3f22274262b16942b0bdf62312b6ad0e756aa15ae2985b7e2f3d43e4d60e70a"
+    },
+    "nyx.research.source-verification": {
+      "origin": "adapted",
+      "source": "journalism",
+      "upstream_skill": "source-verification",
+      "local_hash": "sha256:440737f39b0c52d70f9eec4b921e388f222b74c03705a018f8fdad3d20b1ff56"
+    },
+    "nyx.research.web-scraping": {
+      "origin": "adapted",
+      "source": "journalism",
+      "upstream_skill": "web-scraping",
+      "local_hash": "sha256:be8c07c7585d658e1902dda9c697473d781559a11ec4aed548e972c58fc3660d"
+    },
+    "nyx.research.research-synthesis": {
+      "origin": "nyx-native",
+      "source": null,
+      "upstream_skill": null,
+      "local_hash": "sha256:452235167e7b2dba8693b0958a55dce8f2b7aa9a2e56221522e430ed3be0eda6"
+    },
+    "nyx.research.project-document-discovery": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "project-document-discovery",
+      "local_hash": "sha256:7a4de94ba6bced0977e8e343b4b2cc0376b437fe1db350bd268d0386b0e9f5cd"
+    },
+    "nyx.academic.academic-writing": {
+      "origin": "adapted",
+      "source": "journalism",
+      "upstream_skill": "academic-writing",
+      "local_hash": "sha256:232318273fefc48b7992d298eca59f8c2aecce61e44d6c3c010c5f35527c77bb"
+    },
+    "nyx.academic.paper-analysis": {
+      "origin": "nyx-native",
+      "source": null,
+      "upstream_skill": null,
+      "local_hash": "sha256:fb9bd7a7bc497e9a57f1b120e1f6650dd15a3f75660bf058dbc248807d337023"
+    },
+    "nyx.academic.methodology-review": {
+      "origin": "nyx-native",
+      "source": null,
+      "upstream_skill": null,
+      "local_hash": "sha256:adcebc206e479222bfd6ab42e97d3226a0a2302a969875d607e86e86465cede0"
+    },
+    "nyx.academic.reviewer-workflow": {
+      "origin": "nyx-native",
+      "source": null,
+      "upstream_skill": null,
+      "local_hash": "sha256:9352c5298b1f7840a06af2136cb8192c485c79ab8ef09d19218dcbcb41123d08"
+    },
+    "nyx.academic.citation-audit": {
+      "origin": "nyx-native",
+      "source": null,
+      "upstream_skill": null,
+      "local_hash": "sha256:fc7392017e32578d88fecf85c0fe696923b60684c6fe3ec580a0ad1271d27bd1"
+    },
+    "nyx.data-ai.ml-experiment-design": {
+      "origin": "nyx-native",
+      "source": null,
+      "upstream_skill": null,
+      "local_hash": "sha256:971d1d0d84f85290cb84e59881e4103107d6c4971326d515cb63598abe5ea3df"
+    },
+    "nyx.data-ai.dataset-audit": {
+      "origin": "nyx-native",
+      "source": null,
+      "upstream_skill": null,
+      "local_hash": "sha256:291b6c92c9b5d795555f9e7428c5f8b10f394ad704535c057e773f7912aee95b"
+    },
+    "nyx.data-ai.model-evaluation": {
+      "origin": "nyx-native",
+      "source": null,
+      "upstream_skill": null,
+      "local_hash": "sha256:f9ffb0e5490c7520cfb85e98a0e396257419be0c7b1ca149514868f3488313b2"
+    },
+    "nyx.data-ai.ml-prior-art": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "ml-prior-art-survey",
+      "local_hash": "sha256:9225761446b49f6b8127b4d3482f06bce82f2e8b9cd0ac7fb828f97ead0e270f"
+    },
+    "nyx.data-ai.python-data-pipeline": {
+      "origin": "nyx-native",
+      "source": null,
+      "upstream_skill": null,
+      "local_hash": "sha256:ae9fecd53dfbd5fe3d5ef3756c76c40ae1fe712eae5c415fd14cd880d047888f"
+    },
+    "nyx.documents.document-review": {
+      "origin": "nyx-native",
+      "source": null,
+      "upstream_skill": null,
+      "local_hash": "sha256:4f3baaa2ab4e5c259a3e54bc16cfde5ea4067830994a81e58d1bba70fce57079"
+    },
+    "nyx.documents.structured-rewrite": {
+      "origin": "nyx-native",
+      "source": null,
+      "upstream_skill": null,
+      "local_hash": "sha256:fedcae2ed9871bd5d3ebfd0882b5ba74af5cb3f9826db32e7fde5696b75a9f02"
+    },
+    "nyx.documents.document-design": {
+      "origin": "adapted",
+      "source": "journalism",
+      "upstream_skill": "document-design",
+      "local_hash": "sha256:ea8a0a698d97d908625b29acad12e454da557ec89aadad0639f383fbf98f94ca"
+    },
+    "nyx.documents.api-reference": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "authoring-api-reference",
+      "local_hash": "sha256:f5e3ff4ff60d51c427f7f581308ee03701075d26a3c2448d28b1c3e320c2a63d"
+    },
+    "nyx.documents.developer-guide": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "authoring-developer-guide",
+      "local_hash": "sha256:d193ef5003b6edfd83bbc0e56d222d0598b07df95b18735c64494d9ed9a92269"
+    },
+    "nyx.documents.user-guide": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "authoring-user-guide",
+      "local_hash": "sha256:4592f52e36cc54aaea2e9c4fc00d9aa924d1fd9dddd17c0619c70854ab3a4256"
+    },
+    "nyx.automation.ci-cd-automation": {
+      "origin": "adapted",
+      "source": "skill.md-main",
+      "upstream_skill": "ci-cd-and-automation",
+      "local_hash": "sha256:6d8bf286efd1d26c710a0cfa32c7fb673d9db2fafc8e3190d142a721f619316b"
+    },
+    "nyx.automation.github-cli-ops": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "github-cli-ops",
+      "local_hash": "sha256:117a98fc27b00b05e2b0ce92af7e55434d25e0e396c53bec7a21c98143c492d3"
+    },
+    "nyx.automation.polyglot-git-hooks": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "polyglot-git-hooks",
+      "local_hash": "sha256:ccaa0e5c3a37a4ce8ce17ad48ab8d62c524e71facb06aa9a84741c783a8e7c06"
+    },
+    "nyx.automation.project-retrospective": {
+      "origin": "adapted",
+      "source": "journalism",
+      "upstream_skill": "project-retrospective",
+      "local_hash": "sha256:f951250b28cc60f423b6d121e544b6ffb36311e53fe931d1343ae69d2aea4603"
+    },
+    "nyx.devops.release-check": {
+      "origin": "nyx-native",
+      "source": null,
+      "upstream_skill": null,
+      "local_hash": "sha256:9076bbb99ae650326868c9266fee0bfe76b45a226b564aa0ca03f03180d7ca92"
+    },
+    "nyx.devops.deployment-review": {
+      "origin": "nyx-native",
+      "source": null,
+      "upstream_skill": null,
+      "local_hash": "sha256:9b4d129f6ece049b1240960ec5a2278acea4cdc8b2c3c3702a8772fce839422b"
+    },
+    "nyx.devops.cloudflare-pages-ops": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "cloudflare-pages-ops",
+      "local_hash": "sha256:516b39fa3bddd2fdd8d1c220e937b39a6ca4dd05949bd8dceb35fadf692b0c05"
+    },
+    "nyx.devops.netlify-ops": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "netlify-ops",
+      "local_hash": "sha256:95be6aed7369f60c7f004f98b7df33cea70627bbaebe60abb8c9931abff19e91"
+    },
+    "nyx.devops.jenkins-rest-ops": {
+      "origin": "adapted",
+      "source": "agent-skills",
+      "upstream_skill": "jenkins-rest-ops",
+      "local_hash": "sha256:6226cbbc8797fcb3c8fba17f62015bef13cda5f704df361a06adde850e8f36e0"
+    },
+    "nyx.core.nyxskill-router": {
+      "origin": "nyx-native",
+      "source": null,
+      "upstream_skill": null,
+      "local_hash": "sha256:16b037a16e4649387500a579d54a7bd540f19ba0c0e9949fb02701502aa961f8"
+    }
+  }
+}

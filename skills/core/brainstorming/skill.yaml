@@ -1,0 +1,66 @@
+{
+  "id": "nyx.core.brainstorming",
+  "name": "Brainstorming",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "core.brainstorming",
+  "type": "process",
+  "profiles": [
+    "product",
+    "coding",
+    "universal"
+  ],
+  "description": "Explore intent, constraints, alternatives, and trade-offs before committing to a design.",
+  "routing": {
+    "priority": 95,
+    "triggers": {
+      "keywords": [
+        "brainstorm",
+        "design",
+        "idea",
+        "requirements"
+      ],
+      "intents": [
+        "author",
+        "plan"
+      ]
+    },
+    "exclusive_group": "design-process"
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": []
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "superpowers",
+    "adapted_from": "brainstorming",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

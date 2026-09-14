@@ -1,0 +1,18 @@
+{
+  "id": "coding",
+  "name": "Coding",
+  "includes": [],
+  "triggers": {
+    "keywords": [
+      "code",
+      "bug",
+      "debug",
+      "typescript",
+      "python",
+      "api",
+      "test",
+      "refactor",
+      "git"
+    ]
+  }
+}

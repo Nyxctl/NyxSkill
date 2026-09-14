@@ -1,0 +1,17 @@
+{
+  "id": "browser-extension",
+  "name": "Browser Extension",
+  "includes": [
+    "coding",
+    "product"
+  ],
+  "triggers": {
+    "keywords": [
+      "extension",
+      "chrome",
+      "firefox",
+      "manifest",
+      "userscript"
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": "nyx.devops.deployment-review",
+  "name": "Deployment Review",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "devops.deployment-review",
+  "type": "domain",
+  "profiles": [
+    "devops"
+  ],
+  "description": "Review deployment target, environment differences, migrations, secrets, health checks, observability, rollback, and blast radius.",
+  "routing": {
+    "priority": 78,
+    "triggers": {
+      "keywords": [
+        "deploy",
+        "deployment",
+        "production"
+      ],
+      "intents": [
+        "release"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "network.http",
+      "deployment",
+      "shell"
+    ]
+  },
+  "risk": {
+    "level": "privileged",
+    "destructive": false,
+    "requires_confirmation": true
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "nyx-native",
+    "source": null,
+    "adapted_from": null,
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

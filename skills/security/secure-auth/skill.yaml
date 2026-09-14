@@ -1,0 +1,67 @@
+{
+  "id": "nyx.security.secure-auth",
+  "name": "Secure Auth",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "security.secure-auth",
+  "type": "policy",
+  "profiles": [
+    "security",
+    "coding",
+    "browser-extension"
+  ],
+  "description": "Design and review authentication/session flows, token handling, redirects, storage, expiry, revocation, and authorization boundaries.",
+  "routing": {
+    "priority": 90,
+    "triggers": {
+      "keywords": [
+        "auth",
+        "oauth",
+        "login",
+        "session",
+        "token"
+      ],
+      "intents": [
+        "secure-auth"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "network.http"
+    ]
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "journalism",
+    "adapted_from": "secure-auth",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": "nyx.uiux.accessibility-compliance",
+  "name": "Accessibility Compliance",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "uiux.accessibility-compliance",
+  "type": "domain",
+  "profiles": [
+    "ui-ux",
+    "product"
+  ],
+  "description": "Review and improve semantics, keyboard behavior, focus, labels, contrast, motion, and assistive-technology compatibility.",
+  "routing": {
+    "priority": 72,
+    "triggers": {
+      "keywords": [
+        "accessibility",
+        "a11y",
+        "wcag"
+      ],
+      "intents": [
+        "ui-design"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write",
+      "browser.visual"
+    ]
+  },
+  "risk": {
+    "level": "safe-write",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "journalism",
+    "adapted_from": "accessibility-compliance",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "product",
+  "name": "Product",
+  "includes": [
+    "coding"
+  ],
+  "triggers": {
+    "keywords": [
+      "product",
+      "feature",
+      "requirement",
+      "prd",
+      "roadmap",
+      "architecture"
+    ]
+  }
+}

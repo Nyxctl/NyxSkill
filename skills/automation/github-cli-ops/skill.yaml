@@ -1,0 +1,66 @@
+{
+  "id": "nyx.automation.github-cli-ops",
+  "name": "Github Cli Ops",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "automation.github-cli-ops",
+  "type": "domain",
+  "profiles": [
+    "automation"
+  ],
+  "description": "Use GitHub CLI workflows carefully for repository inspection, issues, pull requests, checks, releases, and auditable changes.",
+  "routing": {
+    "priority": 72,
+    "triggers": {
+      "keywords": [
+        "github cli",
+        "gh ",
+        "pull request",
+        "github issue"
+      ],
+      "intents": [
+        "automation"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "git.write",
+      "network.http",
+      "shell"
+    ]
+  },
+  "risk": {
+    "level": "privileged",
+    "destructive": false,
+    "requires_confirmation": true
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "agent-skills",
+    "adapted_from": "github-cli-ops",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

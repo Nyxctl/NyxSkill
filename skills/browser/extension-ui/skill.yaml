@@ -1,0 +1,65 @@
+{
+  "id": "nyx.browser.extension-ui",
+  "name": "Extension Ui",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "browser.extension-ui",
+  "type": "domain",
+  "profiles": [
+    "browser-extension"
+  ],
+  "description": "Design extension popup, options, side panel, onboarding, and in-page UI for constrained browser surfaces.",
+  "routing": {
+    "priority": 75,
+    "triggers": {
+      "keywords": [
+        "extension",
+        "ui"
+      ],
+      "intents": [
+        "ui-design"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write",
+      "browser.dom",
+      "browser.visual",
+      "test_runner"
+    ]
+  },
+  "risk": {
+    "level": "safe-write",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "browser-extension-skills",
+    "adapted_from": "extension-ui",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

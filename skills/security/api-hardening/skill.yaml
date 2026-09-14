@@ -1,0 +1,65 @@
+{
+  "id": "nyx.security.api-hardening",
+  "name": "Api Hardening",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "security.api-hardening",
+  "type": "policy",
+  "profiles": [
+    "security",
+    "coding",
+    "browser-extension"
+  ],
+  "description": "Harden APIs with authentication, authorization, validation, rate limits, safe errors, idempotency, and abuse resistance.",
+  "routing": {
+    "priority": 78,
+    "triggers": {
+      "keywords": [
+        "api security",
+        "api hardening",
+        "endpoint security"
+      ],
+      "intents": [
+        "security-review"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "network.http"
+    ]
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "journalism",
+    "adapted_from": "api-hardening",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

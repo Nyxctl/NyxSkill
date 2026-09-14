@@ -1,0 +1,21 @@
+{
+  "id": "nyx.automation",
+  "name": "Nyx Automation Pack",
+  "version": "1.0.0",
+  "api_version": 1,
+  "namespace": "nyx.automation",
+  "profiles": [
+    "automation"
+  ],
+  "skills": [
+    "nyx.automation.ci-cd-automation",
+    "nyx.automation.github-cli-ops",
+    "nyx.automation.polyglot-git-hooks",
+    "nyx.automation.project-retrospective"
+  ],
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  },
+  "trust": "first-party"
+}

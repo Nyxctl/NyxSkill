@@ -1,0 +1,65 @@
+{
+  "id": "nyx.browser.extension-review",
+  "name": "Extension Review",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "browser.extension-review",
+  "type": "domain",
+  "profiles": [
+    "browser-extension"
+  ],
+  "description": "Perform a release-focused extension review covering correctness, security, permissions, privacy, UX, and store compliance.",
+  "routing": {
+    "priority": 75,
+    "triggers": {
+      "keywords": [
+        "extension",
+        "review"
+      ],
+      "intents": [
+        "review"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write",
+      "browser.dom",
+      "browser.visual",
+      "test_runner"
+    ]
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "browser-extension-skills",
+    "adapted_from": "extension-review",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

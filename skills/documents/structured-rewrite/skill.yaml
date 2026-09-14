@@ -1,0 +1,65 @@
+{
+  "id": "nyx.documents.structured-rewrite",
+  "name": "Structured Rewrite",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "documents.structured-rewrite",
+  "type": "domain",
+  "profiles": [
+    "documents",
+    "academic"
+  ],
+  "description": "Rewrite while preserving meaning, evidence, terminology constraints, and requested structure or tone.",
+  "routing": {
+    "priority": 70,
+    "triggers": {
+      "keywords": [
+        "rewrite",
+        "restructure",
+        "edit document"
+      ],
+      "intents": [
+        "document",
+        "author"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write"
+    ]
+  },
+  "risk": {
+    "level": "safe-write",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "nyx-native",
+    "source": null,
+    "adapted_from": null,
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

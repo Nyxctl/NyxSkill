@@ -1,0 +1,16 @@
+{
+  "id": "auto",
+  "name": "Auto",
+  "includes": [],
+  "triggers": {
+    "keywords": [
+      "help",
+      "build",
+      "fix",
+      "review",
+      "research",
+      "write",
+      "design"
+    ]
+  }
+}

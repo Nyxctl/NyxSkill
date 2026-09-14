@@ -1,0 +1,14 @@
+{
+  "skill": "nyx.automation.github-cli-ops",
+  "origin": "adapted",
+  "source": "agent-skills",
+  "upstream_skill": "github-cli-ops",
+  "upstream_version": null,
+  "license": "MIT",
+  "changes": [
+    "normalized to NyxSkill canonical schema",
+    "added deterministic routing metadata",
+    "added capability/risk declarations",
+    "rewritten as cross-runtime Nyx workflow"
+  ]
+}

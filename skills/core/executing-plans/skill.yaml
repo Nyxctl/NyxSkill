@@ -1,0 +1,66 @@
+{
+  "id": "nyx.core.executing-plans",
+  "name": "Executing Plans",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "core.executing-plans",
+  "type": "process",
+  "profiles": [
+    "coding",
+    "product"
+  ],
+  "description": "Execute an approved plan task-by-task with checkpoints, exact verification, and stop conditions for blockers.",
+  "routing": {
+    "priority": 84,
+    "triggers": {
+      "keywords": [
+        "execute plan",
+        "implementation plan"
+      ],
+      "intents": [
+        "plan"
+      ]
+    },
+    "exclusive_group": "execution-process"
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write",
+      "shell",
+      "test_runner"
+    ]
+  },
+  "risk": {
+    "level": "safe-write",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "superpowers",
+    "adapted_from": "executing-plans",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

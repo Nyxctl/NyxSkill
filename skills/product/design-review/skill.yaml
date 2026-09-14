@@ -1,0 +1,60 @@
+{
+  "id": "nyx.product.design-review",
+  "name": "Design Review",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "product.design-review",
+  "type": "domain",
+  "profiles": [
+    "product"
+  ],
+  "description": "Review product and interface designs against goals, flows, consistency, accessibility, feasibility, and edge cases.",
+  "routing": {
+    "priority": 76,
+    "triggers": {
+      "keywords": [
+        "design review",
+        "ux review"
+      ],
+      "intents": [
+        "review"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": []
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "agent-skills",
+    "adapted_from": "design-review",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

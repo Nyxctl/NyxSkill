@@ -1,0 +1,64 @@
+{
+  "id": "nyx.core.writing-plans",
+  "name": "Writing Plans",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "core.writing-plans",
+  "type": "process",
+  "profiles": [
+    "coding",
+    "product",
+    "universal"
+  ],
+  "description": "Turn an approved design into an executable, testable implementation plan with explicit files, interfaces, tests, and verification.",
+  "routing": {
+    "priority": 92,
+    "triggers": {
+      "keywords": [
+        "implementation plan",
+        "plan",
+        "tasks"
+      ],
+      "intents": [
+        "plan"
+      ]
+    },
+    "exclusive_group": "planning-process"
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": []
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "superpowers",
+    "adapted_from": "writing-plans",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

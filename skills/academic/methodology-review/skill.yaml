@@ -1,0 +1,61 @@
+{
+  "id": "nyx.academic.methodology-review",
+  "name": "Methodology Review",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "academic.methodology-review",
+  "type": "domain",
+  "profiles": [
+    "academic"
+  ],
+  "description": "Review methodological validity, leakage risk, baselines, metrics, reproducibility, statistical support, and claim alignment.",
+  "routing": {
+    "priority": 73,
+    "triggers": {
+      "keywords": [
+        "methodology",
+        "experimental design",
+        "methods review"
+      ],
+      "intents": [
+        "review"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": []
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "nyx-native",
+    "source": null,
+    "adapted_from": null,
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

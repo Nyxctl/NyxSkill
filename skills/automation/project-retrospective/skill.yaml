@@ -1,0 +1,65 @@
+{
+  "id": "nyx.automation.project-retrospective",
+  "name": "Project Retrospective",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "automation.project-retrospective",
+  "type": "domain",
+  "profiles": [
+    "automation"
+  ],
+  "description": "Capture what changed, evidence of outcomes, surprises, root causes, decisions, and concrete improvements for the next cycle.",
+  "routing": {
+    "priority": 72,
+    "triggers": {
+      "keywords": [
+        "retrospective",
+        "postmortem",
+        "lessons learned"
+      ],
+      "intents": [
+        "review"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "git.write",
+      "network.http",
+      "shell"
+    ]
+  },
+  "risk": {
+    "level": "safe-write",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "journalism",
+    "adapted_from": "project-retrospective",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "id": "nyx.core.verification",
+  "name": "Verification",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "core.verification",
+  "type": "finalizer",
+  "profiles": [
+    "coding",
+    "product",
+    "browser-extension",
+    "security",
+    "research",
+    "academic",
+    "data-ai",
+    "documents",
+    "automation",
+    "devops",
+    "universal"
+  ],
+  "description": "Verify claims with fresh commands or evidence before completion and report exactly what passed or remains blocked.",
+  "routing": {
+    "priority": 100,
+    "triggers": {
+      "keywords": [
+        "verify",
+        "verification",
+        "done",
+        "complete"
+      ],
+      "intents": [
+        "verify"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "shell",
+      "test_runner"
+    ]
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "superpowers",
+    "adapted_from": "verification-before-completion",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

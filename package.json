@@ -1,0 +1,32 @@
+{
+  "name": "nyxskill",
+  "version": "1.0.0",
+  "description": "NyxSkill universal deterministic skill router and cross-runtime skill pack",
+  "type": "module",
+  "bin": {
+    "nyxskill": "dist/src/cli.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "validate": "node dist/src/cli.js validate --all",
+    "release:local": "npm run build && node scripts/release.mjs"
+  },
+  "files": [
+    "dist/src",
+    "skills",
+    "profiles",
+    "packs",
+    "provenance",
+    "licenses",
+    "nyxskill.lock",
+    "THIRD_PARTY_NOTICES.md",
+    "README.md",
+    "INSTALL.md"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,60 @@
+{
+  "id": "nyx.product.feature-spec",
+  "name": "Feature Spec",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "product.feature-spec",
+  "type": "domain",
+  "profiles": [
+    "product"
+  ],
+  "description": "Specify feature behavior, states, edge cases, acceptance criteria, dependencies, and rollout considerations.",
+  "routing": {
+    "priority": 76,
+    "triggers": {
+      "keywords": [
+        "feature spec",
+        "feature requirements"
+      ],
+      "intents": [
+        "author"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": []
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "agent-skills",
+    "adapted_from": "authoring-feature-spec",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

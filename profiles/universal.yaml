@@ -1,0 +1,10 @@
+{
+  "id": "universal",
+  "name": "Universal",
+  "includes": [],
+  "triggers": {
+    "keywords": [
+      "universal"
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": "nyx.uiux.hi-fi",
+  "name": "Hi Fi",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "uiux.hi-fi",
+  "type": "domain",
+  "profiles": [
+    "ui-ux",
+    "product"
+  ],
+  "description": "Create or review high-fidelity UI details with consistent typography, spacing, color, states, responsiveness, and accessibility.",
+  "routing": {
+    "priority": 72,
+    "triggers": {
+      "keywords": [
+        "high fidelity",
+        "hi fi",
+        "visual design"
+      ],
+      "intents": [
+        "ui-design"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write",
+      "browser.visual"
+    ]
+  },
+  "risk": {
+    "level": "safe-write",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "agent-skills",
+    "adapted_from": "authoring-hi-fi",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

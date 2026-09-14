@@ -1,0 +1,64 @@
+{
+  "id": "nyx.devops.cloudflare-pages-ops",
+  "name": "Cloudflare Pages Ops",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "devops.cloudflare-pages-ops",
+  "type": "domain",
+  "profiles": [
+    "devops"
+  ],
+  "description": "Operate Cloudflare Pages deployments with environment-aware build, preview, domain, cache, secret, and rollback checks.",
+  "routing": {
+    "priority": 78,
+    "triggers": {
+      "keywords": [
+        "cloudflare pages",
+        "cloudflare deploy"
+      ],
+      "intents": [
+        "release"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "network.http",
+      "deployment",
+      "shell"
+    ]
+  },
+  "risk": {
+    "level": "privileged",
+    "destructive": false,
+    "requires_confirmation": true
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "agent-skills",
+    "adapted_from": "cloudflare-pages-ops",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

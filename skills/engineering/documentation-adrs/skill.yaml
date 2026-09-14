@@ -1,0 +1,65 @@
+{
+  "id": "nyx.engineering.documentation-adrs",
+  "name": "Documentation Adrs",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "engineering.documentation-adrs",
+  "type": "domain",
+  "profiles": [
+    "coding"
+  ],
+  "description": "Capture important engineering decisions, context, alternatives, consequences, and follow-up actions in durable documentation.",
+  "routing": {
+    "priority": 70,
+    "triggers": {
+      "keywords": [
+        "adr",
+        "architecture decision",
+        "technical documentation"
+      ],
+      "intents": [
+        "document"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write",
+      "shell",
+      "test_runner"
+    ]
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "skill.md-main",
+    "adapted_from": "documentation-and-adrs",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

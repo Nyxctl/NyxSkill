@@ -1,0 +1,64 @@
+{
+  "id": "nyx.uiux.ui-illustrations",
+  "name": "Ui Illustrations",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "uiux.ui-illustrations",
+  "type": "domain",
+  "profiles": [
+    "ui-ux",
+    "product"
+  ],
+  "description": "Plan and integrate UI illustrations with clear purpose, sizing, accessibility, performance, and responsive behavior.",
+  "routing": {
+    "priority": 72,
+    "triggers": {
+      "keywords": [
+        "illustration",
+        "ui artwork"
+      ],
+      "intents": [
+        "ui-design"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write",
+      "browser.visual"
+    ]
+  },
+  "risk": {
+    "level": "safe-write",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "agent-skills",
+    "adapted_from": "ui-illustrations",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

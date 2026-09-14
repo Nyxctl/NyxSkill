@@ -1,0 +1,65 @@
+{
+  "id": "nyx.browser.extension-assets",
+  "name": "Extension Assets",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "browser.extension-assets",
+  "type": "domain",
+  "profiles": [
+    "browser-extension"
+  ],
+  "description": "Prepare icons, store images, public assets, and packaging paths that satisfy browser-store requirements.",
+  "routing": {
+    "priority": 75,
+    "triggers": {
+      "keywords": [
+        "extension",
+        "assets"
+      ],
+      "intents": [
+        "develop-extension"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write",
+      "browser.dom",
+      "browser.visual",
+      "test_runner"
+    ]
+  },
+  "risk": {
+    "level": "safe-write",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "browser-extension-skills",
+    "adapted_from": "extension-assets",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

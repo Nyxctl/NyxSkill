@@ -1,0 +1,65 @@
+{
+  "id": "nyx.browser.extension-backend",
+  "name": "Extension Backend",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "browser.extension-backend",
+  "type": "domain",
+  "profiles": [
+    "browser-extension"
+  ],
+  "description": "Design backend services used by an extension with secure authentication, API boundaries, rate limits, and resilient client behavior.",
+  "routing": {
+    "priority": 75,
+    "triggers": {
+      "keywords": [
+        "extension",
+        "backend"
+      ],
+      "intents": [
+        "develop-extension"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write",
+      "browser.dom",
+      "browser.visual",
+      "test_runner"
+    ]
+  },
+  "risk": {
+    "level": "safe-write",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "browser-extension-skills",
+    "adapted_from": "extension-backend",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

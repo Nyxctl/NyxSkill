@@ -1,0 +1,16 @@
+{
+  "id": "security",
+  "name": "Security",
+  "includes": [],
+  "triggers": {
+    "keywords": [
+      "security",
+      "auth",
+      "oauth",
+      "vulnerability",
+      "hardening",
+      "secret",
+      "threat"
+    ]
+  }
+}

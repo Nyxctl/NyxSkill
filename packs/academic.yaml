@@ -1,0 +1,22 @@
+{
+  "id": "nyx.academic",
+  "name": "Nyx Academic Pack",
+  "version": "1.0.0",
+  "api_version": 1,
+  "namespace": "nyx.academic",
+  "profiles": [
+    "academic"
+  ],
+  "skills": [
+    "nyx.academic.academic-writing",
+    "nyx.academic.citation-audit",
+    "nyx.academic.methodology-review",
+    "nyx.academic.paper-analysis",
+    "nyx.academic.reviewer-workflow"
+  ],
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  },
+  "trust": "first-party"
+}

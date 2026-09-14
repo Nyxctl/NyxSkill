@@ -1,0 +1,66 @@
+{
+  "id": "nyx.documents.document-review",
+  "name": "Document Review",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "documents.document-review",
+  "type": "domain",
+  "profiles": [
+    "documents",
+    "academic"
+  ],
+  "description": "Review documents for structure, consistency, terminology, missing evidence, tables/figures, formatting, and actionability.",
+  "routing": {
+    "priority": 70,
+    "triggers": {
+      "keywords": [
+        "document review",
+        "review document",
+        "docx",
+        "pdf"
+      ],
+      "intents": [
+        "document",
+        "review"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write"
+    ]
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "nyx-native",
+    "source": null,
+    "adapted_from": null,
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

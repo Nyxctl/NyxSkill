@@ -1,0 +1,11 @@
+{
+  "skill": "nyx.core.nyxskill-router",
+  "origin": "nyx-native",
+  "source": null,
+  "upstream_skill": null,
+  "upstream_version": null,
+  "license": "MIT",
+  "changes": [
+    "authored as explicit NyxSkill v1 entry-point router"
+  ]
+}

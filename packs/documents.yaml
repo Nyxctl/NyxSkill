@@ -1,0 +1,23 @@
+{
+  "id": "nyx.documents",
+  "name": "Nyx Documents Pack",
+  "version": "1.0.0",
+  "api_version": 1,
+  "namespace": "nyx.documents",
+  "profiles": [
+    "documents"
+  ],
+  "skills": [
+    "nyx.documents.api-reference",
+    "nyx.documents.developer-guide",
+    "nyx.documents.document-design",
+    "nyx.documents.document-review",
+    "nyx.documents.structured-rewrite",
+    "nyx.documents.user-guide"
+  ],
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  },
+  "trust": "first-party"
+}

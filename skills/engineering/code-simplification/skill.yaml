@@ -1,0 +1,65 @@
+{
+  "id": "nyx.engineering.code-simplification",
+  "name": "Code Simplification",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "engineering.code-simplification",
+  "type": "domain",
+  "profiles": [
+    "coding"
+  ],
+  "description": "Reduce accidental complexity without changing observable behavior, preserving tests and public contracts.",
+  "routing": {
+    "priority": 70,
+    "triggers": {
+      "keywords": [
+        "simplify code",
+        "cleanup",
+        "complexity"
+      ],
+      "intents": [
+        "review"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write",
+      "shell",
+      "test_runner"
+    ]
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "skill.md-main",
+    "adapted_from": "code-simplification",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

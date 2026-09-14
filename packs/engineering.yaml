@@ -1,0 +1,28 @@
+{
+  "id": "nyx.engineering",
+  "name": "Nyx Engineering Pack",
+  "version": "1.0.0",
+  "api_version": 1,
+  "namespace": "nyx.engineering",
+  "profiles": [
+    "coding"
+  ],
+  "skills": [
+    "nyx.engineering.api-design",
+    "nyx.engineering.code-simplification",
+    "nyx.engineering.deprecation-migration",
+    "nyx.engineering.documentation-adrs",
+    "nyx.engineering.observability",
+    "nyx.engineering.openapi-ts-client",
+    "nyx.engineering.performance-optimization",
+    "nyx.engineering.python-pipeline",
+    "nyx.engineering.react-component-testing",
+    "nyx.engineering.rest-api-design",
+    "nyx.engineering.typescript-typecheck"
+  ],
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  },
+  "trust": "first-party"
+}

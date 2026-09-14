@@ -1,0 +1,65 @@
+{
+  "id": "nyx.data-ai.ml-prior-art",
+  "name": "Ml Prior Art",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "data-ai.ml-prior-art",
+  "type": "domain",
+  "profiles": [
+    "data-ai"
+  ],
+  "description": "Survey comparable ML techniques, datasets, metrics, compute assumptions, and evaluation protocols.",
+  "routing": {
+    "priority": 78,
+    "triggers": {
+      "keywords": [
+        "ml prior art",
+        "machine learning prior art"
+      ],
+      "intents": [
+        "research",
+        "data-ai"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write",
+      "shell",
+      "test_runner"
+    ]
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "agent-skills",
+    "adapted_from": "ml-prior-art-survey",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

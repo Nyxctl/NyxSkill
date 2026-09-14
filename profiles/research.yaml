@@ -1,0 +1,15 @@
+{
+  "id": "research",
+  "name": "Research",
+  "includes": [],
+  "triggers": {
+    "keywords": [
+      "research",
+      "literature",
+      "prior art",
+      "survey",
+      "source",
+      "evidence"
+    ]
+  }
+}

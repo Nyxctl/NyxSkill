@@ -1,0 +1,14 @@
+{
+  "skill": "nyx.devops.jenkins-rest-ops",
+  "origin": "adapted",
+  "source": "agent-skills",
+  "upstream_skill": "jenkins-rest-ops",
+  "upstream_version": null,
+  "license": "MIT",
+  "changes": [
+    "normalized to NyxSkill canonical schema",
+    "added deterministic routing metadata",
+    "added capability/risk declarations",
+    "rewritten as cross-runtime Nyx workflow"
+  ]
+}

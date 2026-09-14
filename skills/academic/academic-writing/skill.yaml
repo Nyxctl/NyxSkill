@@ -1,0 +1,61 @@
+{
+  "id": "nyx.academic.academic-writing",
+  "name": "Academic Writing",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "academic.academic-writing",
+  "type": "domain",
+  "profiles": [
+    "academic"
+  ],
+  "description": "Write clear academic prose that distinguishes method, evidence, results, limitations, and claims without overstating findings.",
+  "routing": {
+    "priority": 73,
+    "triggers": {
+      "keywords": [
+        "academic writing",
+        "paper writing",
+        "manuscript"
+      ],
+      "intents": [
+        "author"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": []
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "journalism",
+    "adapted_from": "academic-writing",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": "nyx.engineering.deprecation-migration",
+  "name": "Deprecation Migration",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "engineering.deprecation-migration",
+  "type": "domain",
+  "profiles": [
+    "coding"
+  ],
+  "description": "Plan staged migrations with compatibility windows, telemetry, rollback, and clear consumer guidance.",
+  "routing": {
+    "priority": 70,
+    "triggers": {
+      "keywords": [
+        "deprecation",
+        "migration",
+        "breaking change"
+      ],
+      "intents": [
+        "plan"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write",
+      "shell",
+      "test_runner"
+    ]
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "skill.md-main",
+    "adapted_from": "deprecation-and-migration",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

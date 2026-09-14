@@ -1,0 +1,27 @@
+{
+  "id": "nyx.product",
+  "name": "Nyx Product Pack",
+  "version": "1.0.0",
+  "api_version": 1,
+  "namespace": "nyx.product",
+  "profiles": [
+    "product"
+  ],
+  "skills": [
+    "nyx.product.architecture-doc",
+    "nyx.product.data-model",
+    "nyx.product.design-review",
+    "nyx.product.feature-spec",
+    "nyx.product.prd-authoring",
+    "nyx.product.release-runbook",
+    "nyx.product.requirements-analysis",
+    "nyx.product.technical-design",
+    "nyx.product.test-plan",
+    "nyx.product.user-flows"
+  ],
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  },
+  "trust": "first-party"
+}

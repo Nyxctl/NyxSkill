@@ -1,0 +1,14 @@
+{
+  "skill": "nyx.engineering.api-design",
+  "origin": "adapted",
+  "source": "skill.md-main",
+  "upstream_skill": "api-and-interface-design",
+  "upstream_version": null,
+  "license": "MIT",
+  "changes": [
+    "normalized to NyxSkill canonical schema",
+    "added deterministic routing metadata",
+    "added capability/risk declarations",
+    "rewritten as cross-runtime Nyx workflow"
+  ]
+}

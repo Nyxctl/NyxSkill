@@ -1,0 +1,65 @@
+{
+  "id": "nyx.browser.extension-create",
+  "name": "Extension Create",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "browser.extension-create",
+  "type": "domain",
+  "profiles": [
+    "browser-extension"
+  ],
+  "description": "Create a browser extension foundation with clear manifest, permissions, messaging, storage, build, and testing structure.",
+  "routing": {
+    "priority": 75,
+    "triggers": {
+      "keywords": [
+        "extension",
+        "create"
+      ],
+      "intents": [
+        "develop-extension"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write",
+      "browser.dom",
+      "browser.visual",
+      "test_runner"
+    ]
+  },
+  "risk": {
+    "level": "safe-write",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "browser-extension-skills",
+    "adapted_from": "extension-create",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "nyx.academic.citation-audit",
+  "name": "Citation Audit",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "academic.citation-audit",
+  "type": "domain",
+  "profiles": [
+    "academic"
+  ],
+  "description": "Audit whether citations support nearby claims, are complete and consistent, and distinguish background from direct evidence.",
+  "routing": {
+    "priority": 73,
+    "triggers": {
+      "keywords": [
+        "citation",
+        "references",
+        "bibliography"
+      ],
+      "intents": [
+        "review"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": []
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "nyx-native",
+    "source": null,
+    "adapted_from": null,
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

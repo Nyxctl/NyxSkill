@@ -1,0 +1,63 @@
+{
+  "id": "nyx.research.web-scraping",
+  "name": "Web Scraping",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "research.web-scraping",
+  "type": "domain",
+  "profiles": [
+    "research"
+  ],
+  "description": "Extract web data responsibly with stable selectors, rate awareness, provenance, validation, and reproducible outputs.",
+  "routing": {
+    "priority": 74,
+    "triggers": {
+      "keywords": [
+        "web scraping",
+        "scrape",
+        "extract web"
+      ],
+      "intents": [
+        "research"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "network.http"
+    ]
+  },
+  "risk": {
+    "level": "privileged",
+    "destructive": false,
+    "requires_confirmation": true
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "journalism",
+    "adapted_from": "web-scraping",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

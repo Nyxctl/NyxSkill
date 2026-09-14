@@ -1,0 +1,16 @@
+{
+  "id": "automation",
+  "name": "Automation",
+  "includes": [
+    "coding"
+  ],
+  "triggers": {
+    "keywords": [
+      "automation",
+      "workflow",
+      "ci",
+      "github actions",
+      "hook"
+    ]
+  }
+}

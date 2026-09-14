@@ -1,0 +1,64 @@
+{
+  "id": "nyx.documents.api-reference",
+  "name": "Api Reference",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "documents.api-reference",
+  "type": "domain",
+  "profiles": [
+    "documents",
+    "academic"
+  ],
+  "description": "Write precise API reference material with signatures, parameters, responses, errors, examples, and compatibility notes.",
+  "routing": {
+    "priority": 70,
+    "triggers": {
+      "keywords": [
+        "api reference",
+        "reference docs"
+      ],
+      "intents": [
+        "document",
+        "author"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write"
+    ]
+  },
+  "risk": {
+    "level": "safe-write",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "agent-skills",
+    "adapted_from": "authoring-api-reference",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": "nyx.data-ai.dataset-audit",
+  "name": "Dataset Audit",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "data-ai.dataset-audit",
+  "type": "domain",
+  "profiles": [
+    "data-ai"
+  ],
+  "description": "Audit dataset provenance, schema, labels, leakage, imbalance, duplicates, missingness, splits, and representativeness.",
+  "routing": {
+    "priority": 78,
+    "triggers": {
+      "keywords": [
+        "dataset",
+        "data quality",
+        "label audit"
+      ],
+      "intents": [
+        "data-ai"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write",
+      "shell",
+      "test_runner"
+    ]
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "nyx-native",
+    "source": null,
+    "adapted_from": null,
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

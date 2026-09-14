@@ -1,0 +1,23 @@
+{
+  "id": "nyx.security",
+  "name": "Nyx Security Pack",
+  "version": "1.0.0",
+  "api_version": 1,
+  "namespace": "nyx.security",
+  "profiles": [
+    "security"
+  ],
+  "skills": [
+    "nyx.security.api-hardening",
+    "nyx.security.external-content-sanitizer",
+    "nyx.security.secure-auth",
+    "nyx.security.security-checklist",
+    "nyx.security.security-review",
+    "nyx.security.supply-chain-hardening"
+  ],
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  },
+  "trust": "first-party"
+}

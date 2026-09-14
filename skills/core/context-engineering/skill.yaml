@@ -1,0 +1,63 @@
+{
+  "id": "nyx.core.context-engineering",
+  "name": "Context Engineering",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "core.context-engineering",
+  "type": "domain",
+  "profiles": [
+    "coding",
+    "product",
+    "research"
+  ],
+  "description": "Structure working context so agents receive the minimum complete information needed for reliable execution.",
+  "routing": {
+    "priority": 72,
+    "triggers": {
+      "keywords": [
+        "context",
+        "prompt context",
+        "token budget"
+      ],
+      "intents": [
+        "review"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": []
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "skill.md-main",
+    "adapted_from": "context-engineering",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

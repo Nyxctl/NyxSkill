@@ -1,0 +1,64 @@
+{
+  "id": "nyx.uiux.wireframes",
+  "name": "Wireframes",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "uiux.wireframes",
+  "type": "domain",
+  "profiles": [
+    "ui-ux",
+    "product"
+  ],
+  "description": "Create low-fidelity layouts that make information hierarchy, navigation, states, and interaction paths testable early.",
+  "routing": {
+    "priority": 72,
+    "triggers": {
+      "keywords": [
+        "wireframe",
+        "low fidelity"
+      ],
+      "intents": [
+        "ui-design"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write",
+      "browser.visual"
+    ]
+  },
+  "risk": {
+    "level": "safe-write",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "agent-skills",
+    "adapted_from": "authoring-wireframes",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "ui-ux",
+  "name": "UI / UX",
+  "includes": [
+    "product"
+  ],
+  "triggers": {
+    "keywords": [
+      "ui",
+      "ux",
+      "design system",
+      "wireframe",
+      "frontend",
+      "accessibility"
+    ]
+  }
+}

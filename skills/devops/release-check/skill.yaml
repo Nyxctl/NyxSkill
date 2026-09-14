@@ -1,0 +1,65 @@
+{
+  "id": "nyx.devops.release-check",
+  "name": "Release Check",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "devops.release-check",
+  "type": "domain",
+  "profiles": [
+    "devops"
+  ],
+  "description": "Run pre-release quality, compatibility, security, artifact, changelog, versioning, and rollback checks before publishing.",
+  "routing": {
+    "priority": 78,
+    "triggers": {
+      "keywords": [
+        "release",
+        "ship",
+        "release check"
+      ],
+      "intents": [
+        "release"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "network.http",
+      "deployment",
+      "shell"
+    ]
+  },
+  "risk": {
+    "level": "privileged",
+    "destructive": false,
+    "requires_confirmation": true
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "nyx-native",
+    "source": null,
+    "adapted_from": null,
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

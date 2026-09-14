@@ -1,0 +1,14 @@
+{
+  "skill": "nyx.product.design-review",
+  "origin": "adapted",
+  "source": "agent-skills",
+  "upstream_skill": "design-review",
+  "upstream_version": null,
+  "license": "MIT",
+  "changes": [
+    "normalized to NyxSkill canonical schema",
+    "added deterministic routing metadata",
+    "added capability/risk declarations",
+    "rewritten as cross-runtime Nyx workflow"
+  ]
+}

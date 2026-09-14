@@ -1,0 +1,29 @@
+{
+  "id": "nyx.core",
+  "name": "Nyx Core Pack",
+  "version": "1.0.0",
+  "api_version": 1,
+  "namespace": "nyx.core",
+  "profiles": [
+    "coding",
+    "product"
+  ],
+  "skills": [
+    "nyx.core.brainstorming",
+    "nyx.core.code-review",
+    "nyx.core.context-engineering",
+    "nyx.core.executing-plans",
+    "nyx.core.git-worktrees",
+    "nyx.core.nyxskill-router",
+    "nyx.core.systematic-debugging",
+    "nyx.core.test-driven-development",
+    "nyx.core.verification",
+    "nyx.core.writing-plans",
+    "nyx.core.writing-skills"
+  ],
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  },
+  "trust": "first-party"
+}

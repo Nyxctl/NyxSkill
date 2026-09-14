@@ -1,0 +1,65 @@
+{
+  "id": "nyx.automation.polyglot-git-hooks",
+  "name": "Polyglot Git Hooks",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "automation.polyglot-git-hooks",
+  "type": "domain",
+  "profiles": [
+    "automation"
+  ],
+  "description": "Design fast, portable Git hooks that enforce useful local quality checks without duplicating the full CI pipeline.",
+  "routing": {
+    "priority": 72,
+    "triggers": {
+      "keywords": [
+        "git hooks",
+        "pre-commit",
+        "pre push"
+      ],
+      "intents": [
+        "automation"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "git.write",
+      "network.http",
+      "shell"
+    ]
+  },
+  "risk": {
+    "level": "safe-write",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "agent-skills",
+    "adapted_from": "polyglot-git-hooks",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

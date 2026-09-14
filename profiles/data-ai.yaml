@@ -1,0 +1,19 @@
+{
+  "id": "data-ai",
+  "name": "Data / AI / ML",
+  "includes": [
+    "coding",
+    "research"
+  ],
+  "triggers": {
+    "keywords": [
+      "data",
+      "dataset",
+      "machine learning",
+      "ml",
+      "model",
+      "training",
+      "evaluation"
+    ]
+  }
+}

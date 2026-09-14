@@ -1,0 +1,68 @@
+{
+  "id": "nyx.core.test-driven-development",
+  "name": "Test Driven Development",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "core.test-driven-development",
+  "type": "process",
+  "profiles": [
+    "coding",
+    "browser-extension",
+    "data-ai"
+  ],
+  "description": "Implement behavior through red-green-refactor with tests that fail for the intended reason before production changes.",
+  "routing": {
+    "priority": 94,
+    "triggers": {
+      "keywords": [
+        "tdd",
+        "test first",
+        "implement feature",
+        "bugfix"
+      ],
+      "intents": [
+        "test"
+      ]
+    },
+    "exclusive_group": "implementation-method"
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write",
+      "test_runner"
+    ]
+  },
+  "risk": {
+    "level": "safe-write",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "superpowers",
+    "adapted_from": "test-driven-development",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

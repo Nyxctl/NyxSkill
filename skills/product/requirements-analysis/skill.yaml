@@ -1,0 +1,61 @@
+{
+  "id": "nyx.product.requirements-analysis",
+  "name": "Requirements Analysis",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "product.requirements-analysis",
+  "type": "domain",
+  "profiles": [
+    "product"
+  ],
+  "description": "Translate goals into explicit users, outcomes, constraints, acceptance criteria, risks, and open questions.",
+  "routing": {
+    "priority": 76,
+    "triggers": {
+      "keywords": [
+        "requirements",
+        "acceptance criteria",
+        "user need"
+      ],
+      "intents": [
+        "plan"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": []
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "nyx-native",
+    "source": null,
+    "adapted_from": null,
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

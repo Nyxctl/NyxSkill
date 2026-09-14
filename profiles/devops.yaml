@@ -1,0 +1,19 @@
+{
+  "id": "devops",
+  "name": "DevOps",
+  "includes": [
+    "coding",
+    "automation"
+  ],
+  "triggers": {
+    "keywords": [
+      "deploy",
+      "deployment",
+      "release",
+      "netlify",
+      "cloudflare",
+      "jenkins",
+      "production"
+    ]
+  }
+}

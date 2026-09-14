@@ -1,0 +1,66 @@
+{
+  "id": "nyx.core.git-worktrees",
+  "name": "Git Worktrees",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "core.git-worktrees",
+  "type": "process",
+  "profiles": [
+    "coding",
+    "product"
+  ],
+  "description": "Create or verify an isolated Git workspace before substantial implementation when branch safety matters.",
+  "routing": {
+    "priority": 75,
+    "triggers": {
+      "keywords": [
+        "worktree",
+        "isolated branch",
+        "git branch"
+      ],
+      "intents": [
+        "plan"
+      ]
+    },
+    "exclusive_group": "workspace-process"
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "git.read"
+    ],
+    "optional": [
+      "git.write",
+      "filesystem.write"
+    ]
+  },
+  "risk": {
+    "level": "safe-write",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "superpowers",
+    "adapted_from": "using-git-worktrees",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

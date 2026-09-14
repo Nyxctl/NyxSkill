@@ -1,0 +1,63 @@
+{
+  "id": "nyx.documents.document-design",
+  "name": "Document Design",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "documents.document-design",
+  "type": "domain",
+  "profiles": [
+    "documents",
+    "academic"
+  ],
+  "description": "Design readable reports and documents with consistent hierarchy, spacing, tables, figures, pagination, and accessibility.",
+  "routing": {
+    "priority": 70,
+    "triggers": {
+      "keywords": [
+        "document design",
+        "report layout"
+      ],
+      "intents": [
+        "document"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write"
+    ]
+  },
+  "risk": {
+    "level": "safe-write",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "journalism",
+    "adapted_from": "document-design",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

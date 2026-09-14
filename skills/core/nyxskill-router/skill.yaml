@@ -1,0 +1,63 @@
+{
+  "id": "nyx.core.nyxskill-router",
+  "name": "NyxSkill",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "core.router",
+  "type": "process",
+  "profiles": [
+    "universal"
+  ],
+  "description": "Entry-point router for explicit @NyxSkill requests; resolve profiles, select the minimum relevant canonical skills, enforce risk/capability policy, and end with verification.",
+  "routing": {
+    "priority": 999,
+    "exclusive_group": "nyx-entrypoint",
+    "triggers": {
+      "keywords": [
+        "@nyxskill",
+        "nyxskill"
+      ],
+      "intents": [
+        "route"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "shell"
+    ]
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "nyx-native",
+    "source": null,
+    "adapted_from": null,
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

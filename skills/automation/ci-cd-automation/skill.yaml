@@ -1,0 +1,66 @@
+{
+  "id": "nyx.automation.ci-cd-automation",
+  "name": "Ci Cd Automation",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "automation.ci-cd-automation",
+  "type": "domain",
+  "profiles": [
+    "automation"
+  ],
+  "description": "Design reliable CI/CD workflows with explicit triggers, caches, quality gates, artifacts, secrets, environments, and rollback.",
+  "routing": {
+    "priority": 72,
+    "triggers": {
+      "keywords": [
+        "ci",
+        "cd",
+        "pipeline",
+        "github actions"
+      ],
+      "intents": [
+        "automation"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "git.write",
+      "network.http",
+      "shell"
+    ]
+  },
+  "risk": {
+    "level": "safe-write",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "skill.md-main",
+    "adapted_from": "ci-cd-and-automation",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

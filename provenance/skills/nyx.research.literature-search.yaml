@@ -1,0 +1,11 @@
+{
+  "skill": "nyx.research.literature-search",
+  "origin": "nyx-native",
+  "source": null,
+  "upstream_skill": null,
+  "upstream_version": null,
+  "license": "MIT",
+  "changes": [
+    "authored for NyxSkill v1"
+  ]
+}

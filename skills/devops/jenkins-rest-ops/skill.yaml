@@ -1,0 +1,65 @@
+{
+  "id": "nyx.devops.jenkins-rest-ops",
+  "name": "Jenkins Rest Ops",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "devops.jenkins-rest-ops",
+  "type": "domain",
+  "profiles": [
+    "devops"
+  ],
+  "description": "Inspect and operate Jenkins jobs through controlled REST actions, explicit targets, credentials, and build verification.",
+  "routing": {
+    "priority": 78,
+    "triggers": {
+      "keywords": [
+        "jenkins",
+        "jenkins api"
+      ],
+      "intents": [
+        "automation",
+        "release"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "network.http",
+      "deployment",
+      "shell"
+    ]
+  },
+  "risk": {
+    "level": "privileged",
+    "destructive": false,
+    "requires_confirmation": true
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "adapted",
+    "source": "agent-skills",
+    "adapted_from": "jenkins-rest-ops",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}
