@@ -1,5 +1,5 @@
 import { readdir, stat } from 'node:fs/promises';
-import { join, relative } from 'node:path';
+import { dirname, join, relative } from 'node:path';
 import { readDataFile } from './data.js';
 import { assertPack, assertProfile, assertSkill } from './schema.js';
 import type { PackMeta, ProfileMeta, SkillMeta } from './types.js';
@@ -30,7 +30,7 @@ export async function loadRegistry(root: string): Promise<Registry> {
   const skills: SkillRecord[] = [];
   for (const metadata of skillFiles) {
     const meta = assertSkill(await readDataFile(metadata));
-    const document = join(metadata.slice(0, metadata.lastIndexOf('/')), 'SKILL.md');
+    const document = join(dirname(metadata), 'SKILL.md');
     if (!(await exists(document))) throw new Error(`Missing SKILL.md for ${meta.id}: ${document}`);
     skills.push({ meta, metadata, document, relativePath: relative(root, metadata) });
   }
