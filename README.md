@@ -1,77 +1,116 @@
 # NyxSkill
 
-NyxSkill is a local-first, zero-telemetry, deterministic universal skill ecosystem for AI coding/research/product workflows. It ships 96 canonical first-party skills, 13 packs, profile-aware routing, risk/capability metadata, provenance, validated third-party `.nyxpack` support, and adapters for Inwjud, Codex, Claude Code, Cursor, and generic Agents.
+NyxSkill is a local-first skill system for AI assistants. It selects reusable workflows for each request so the assistant can load the skills it needs. The CLI has zero runtime dependencies and sends no telemetry.
+
+This branch contains **96 canonical skills, 14 packs, and 14 routing profiles**. Workflows cover development, debugging, research, product design, security, browser extensions, documents, automation, DevOps, reverse engineering, and image work.
+
+- [Skill catalog](docs/SKILLS-CATALOG.md)
+- [Pack catalog](docs/PACKS-CATALOG.md)
+- [Installation guide](INSTALL.md)
+- [Changelog](CHANGELOG.md)
 
 ## Quick start
 
-Requires Node.js 20+ only; there are **zero runtime dependencies**.
+Use Node.js 20 or later.
 
 ```bash
+npm ci
 npm run build
 node dist/src/cli.js doctor
-node dist/src/cli.js list
-node dist/src/cli.js route "Chrome extension login broke after API update" --runtime inwjud --explain
-node dist/src/cli.js build --all --out ./dist/runtimes
+node dist/src/cli.js validate --all
+node dist/src/cli.js route "Chrome extension login broke after API update" --runtime codex --explain
 ```
 
-When installed from npm/tarball, use `nyxskill` instead of `node dist/src/cli.js`.
+To install from a downloaded npm tarball, substitute its actual filename:
 
-## Core commands
-
-```text
-nyxskill list
-nyxskill search <query>
-nyxskill inspect <skill-id>
-nyxskill route <request> --explain
-nyxskill validate --all
-nyxskill conflicts
-nyxskill audit
+```bash
+npm install -g ./nyxskill-1.2.0.tgz
 nyxskill doctor
-nyxskill profile list
-nyxskill pack list
-nyxskill pack verify <file.nyxpack>
-nyxskill pack add <file.nyxpack>
-nyxskill build --all
-nyxskill index rebuild
-nyxskill sync --check
-nyxskill provenance <skill-id>
-nyxskill licenses
+nyxskill list
 ```
 
-## Design
+## Installation options
 
-`skills/**/SKILL.md` defines behavior and `skills/**/skill.yaml` defines routing, capabilities, risk, runtimes, provenance, and compatibility. The CLI is optional: the skill folders remain directly consumable by compatible runtimes.
+| Option | Use it for |
+| --- | --- |
+| Portable ZIP | Extract the bundle and point your runtime at its skill folder. In Inwjud, add `runtimes/inwjud/skills` under Extra Skill Folders. |
+| npm tarball | Install the `nyxskill` command and use the bundled library. |
+| Source checkout | Develop skills, run tests, or build adapters and packages. |
+| Individual skill | Copy the entire skill folder, including its references and scripts, into a skill location supported by your host. |
 
-See `INSTALL.md` for runtime setup. Design/implementation specs are under `docs/superpowers/` in the source release.
+See [GitHub Releases](https://github.com/Nyxctl/NyxSkill/releases) for published versions and available assets. For a downloaded package, compare its SHA-256 digest with the matching entry in `SHA256SUMS`. In PowerShell, use `Get-FileHash <downloaded-file> -Algorithm SHA256`.
 
-## Hybrid ecosystem (1.1.0)
+Generate adapter layouts with `nyxskill build --all --out ./dist/runtimes`. NyxSkill provides adapters for **Inwjud, Codex, Claude Code, Cursor, and generic Agents**. Adapter output and host discovery are separate checks. Follow [INSTALL.md](INSTALL.md) for the host-specific folder layout and setup.
 
-Portable skills remain the canonical core. Plugins are generated per pack, with a local development marketplace and managed staging store. No host settings or providers are changed automatically.
+## How routing works
+
+Each canonical skill lives under `skills/<category>/<skill-name>/`.
+
+- `SKILL.md` contains the workflow the assistant follows.
+- `skill.yaml` describes triggers, priority, profiles, dependencies, conflicts, required capabilities, risk, runtime compatibility, and provenance.
+- Optional supporting files hold scripts, references, templates, or tests.
+
+The router selects a deterministic chain from the request, active profiles, and any runtime or capability constraints you supply. Use `--explain` to see why candidates were selected or rejected. The host remains responsible for permission enforcement and tool execution.
+
+| Task | Commands |
+| --- | --- |
+| Find and inspect skills | `nyxskill list`, `nyxskill search <query>`, `nyxskill inspect <skill-id>` |
+| Route a request | `nyxskill route "<request>" --runtime codex --explain` |
+| Browse profiles and packs | `nyxskill profile list`, `nyxskill pack list` |
+| Validate the library | `nyxskill validate --all`, `nyxskill conflicts`, `nyxskill audit`, `nyxskill doctor` |
+| Inspect sources and licenses | `nyxskill provenance <skill-id>`, `nyxskill sources`, `nyxskill licenses` |
+| Maintain the local index and check sources | `nyxskill index rebuild`, `nyxskill sync --check` |
+| Review third-party packs | `nyxskill pack verify <file.nyxpack>`, `nyxskill pack add <file.nyxpack>` |
+
+## Featured workflows
+
+### Universal Image Studio
+
+The [Image & Media pack](packs/image-media.yaml) includes [Universal Image Studio](skills/image-media/universal-image-studio/README.md) for image analysis, reference management, generation, targeted edits, and QA. In Codex, invoke `$universal-image-studio` after installing the skill. In ChatGPT, use the supplied Project Instructions and attach the images the Project can access.
+
+The offline tools use Python 3.11+ and Pillow to inventory references, composite an aligned edit through a grayscale mask, and verify that decoded RGBA values outside the mask match the source. RimWorld Menu Background is an optional profile. Native image generation and editing depend on the tools available in the current session. The workflow has no paid API fallback.
+
+### Codex capability routing
 
 ```bash
+nyxskill capability discover --out ./inventory.json
+nyxskill capability route "create a DOCX" --inventory ./inventory.json
+```
+
+Discovery reports installed and enabled integrations. To plan actual tool use, supply a current, reviewed tool snapshot with `capability discover --tools <file>`. A capability plan distinguishes installation, tool availability, authentication, and authorization. The CLI returns guidance for the host to execute. See the [capability routing guide](docs/CAPABILITY-ROUTING.md).
+
+### Reverse Engineering
+
+The [Reverse Engineering pack](packs/reverse-engineering.yaml) provides eight static-first workflows. Start with triage to identify the artifact, then select the relevant specialist. For example:
+
+```bash
+nyxskill route "inspect a .NET assembly" --profile reverse-engineering --explain
+```
+
+### Learning Loop
+
+The [Learning Loop](docs/LEARNING-LOOP.md) is opt-in. Record a lesson or procedure for a project, verify it with run evidence, and generate a reviewable skill diff once a procedure has two accepted runs. Add `--learning` to a route request to retrieve matching project records. This branch supports host and interactive evidence. Guest verification is deferred with NyxVMTest.
+
+## Plugins and optional integrations
+
+```bash
+nyxskill plugin build --pack nyx.image-media --out ./dist/image-media-plugin
+```
+
+Plugin builds produce local artifacts and marketplace metadata. Use the [plugin guide](docs/PLUGINS.md) to verify the generated package, stage it in a local store, or install it in a compatible host. Graphify and OmniRoute are opt-in and disabled by default. See [optional integrations](docs/OPTIONAL-INTEGRATIONS.md) for local setup and supported inputs.
+
+## Development and verification
+
+```bash
+npm run typecheck
 npm test
-node dist/src/cli.js doctor
-node dist/src/cli.js plugin build --out ./dist/plugins-1.1.0
-node dist/src/cli.js plugin verify ./dist/plugins-1.1.0/plugins/nyx-reverse-engineering
-node dist/src/cli.js plugin install ./dist/plugins-1.1.0/plugins/nyx-reverse-engineering --store ./dist/local-plugin-store
-node dist/src/cli.js plugin list --store ./dist/local-plugin-store
-node dist/src/cli.js route "inspect a .NET assembly" --profile reverse-engineering --explain
-node skills/reverse-engineering/reverse-triage/scripts/inventory.mjs ./sample.dll
-node dist/src/cli.js integration graphify
+python -B skills/image-media/universal-image-studio/tests/test_studio.py
 ```
 
-The default integration state is disabled. For explicitly reviewed local Graphify schemas or OmniRoute manifests see [optional integrations](docs/OPTIONAL-INTEGRATIONS.md). No automatic cloud extraction, provider replacement or credential handling is implemented.
+The Python tests require Pillow. This branch was checked on Windows with 95 Node tests, 4 offline image tests, and registry validation. Host adapters and optional service behavior covered by fixture tests have separate live acceptance requirements.
 
-See [architecture](docs/ARCHITECTURE.md), [plugin and marketplace guide](docs/PLUGINS.md), [migration](docs/MIGRATION.md), [skill catalog](docs/SKILLS-CATALOG.md), [packs](docs/PACKS-CATALOG.md), [security](docs/SECURITY.md), [source decisions](docs/INTEGRATION-DECISIONS.md), and [progress checkpoint](docs/EXPANSION-PROGRESS.md).
+The implementation is under `src/`, canonical workflows under `skills/`, routing metadata under `packs/` and `profiles/`, and source and license records under `provenance/`. See [Architecture](docs/ARCHITECTURE.md), [Compatibility](docs/COMPATIBILITY.md), [Security](docs/SECURITY.md), and [Third-party notices](THIRD_PARTY_NOTICES.md).
 
-## Capability routing (1.2.0)
+## License
 
-```bash
-node dist/src/cli.js capability discover --out ./inventory.json
-node dist/src/cli.js capability route "create a DOCX" --inventory ./inventory.json
-node dist/src/cli.js route "test Windows installer in VM" --json
-```
-
-Discovery refreshes Codex install state only. For actual tool selection supply a current host-reviewed `--tools FILE` snapshot; installed plugins do not prove tool/auth availability. A skill-only artifact provider yields required-skill guidance. The canonical NyxSkill router loads the required provider skill and invokes the selected real tool through the host; CLI plans never execute MCP or VM lifecycle commands.
-
-See [capability routing](docs/CAPABILITY-ROUTING.md), [observed plugin audit](docs/CODEX-PLUGIN-AUDIT.md).
+[MIT](LICENSE).
