@@ -1,0 +1,43 @@
+{
+  "schema_version": 2,
+  "id": "jacket-recolor-001",
+  "platform": "codex",
+  "profile": "general",
+  "mode": "TARGETED_EDIT",
+  "source": "portrait.png",
+  "source_fingerprint": null,
+  "references": [
+    {
+      "ref": "portrait.png",
+      "role": "EDIT_SOURCE"
+    }
+  ],
+  "preserve": [
+    "face",
+    "background"
+  ],
+  "change": [
+    "Change the jacket to navy"
+  ],
+  "forbidden": [
+    "new accessories"
+  ],
+  "edit_region": "jacket",
+  "lock_level": "hard-where-local-mask-is-available",
+  "output": {
+    "format": "PNG",
+    "size": "keep-source-size"
+  },
+  "execution": {
+    "preferred_routes": [
+      "local-edit",
+      "native-image-edit"
+    ],
+    "paid_api_allowed": false,
+    "variant_count": 1
+  },
+  "qa": {
+    "hard": "unverified",
+    "visual": "unverified"
+  }
+}

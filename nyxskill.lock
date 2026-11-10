@@ -1,6 +1,6 @@
 {
   "lockfile_version": 1,
-  "nyxskill_version": "1.0.0",
+  "nyxskill_version": "1.2.0",
   "api_version": 1,
   "sources": {
     "superpowers": {
@@ -54,523 +54,665 @@
       "origin": "adapted",
       "source": "superpowers",
       "upstream_skill": "brainstorming",
-      "local_hash": "sha256:bd81960b3f235305cf7b33ce4c89533aa7541af6b613ceac1d41ab8b3442a7a5"
+      "local_hash": "sha256:bd81960b3f235305cf7b33ce4c89533aa7541af6b613ceac1d41ab8b3442a7a5",
+      "content_sha256": "942fc1398f179bc8a6ab02d300184bb36afbbe7a3cc64286980f16231d008e3b"
     },
     "nyx.core.writing-plans": {
       "origin": "adapted",
       "source": "superpowers",
       "upstream_skill": "writing-plans",
-      "local_hash": "sha256:64c69bfb6a7a2603be50ca321cdb5a67f1e22943027a5690bf0b0afcd86b83dd"
+      "local_hash": "sha256:64c69bfb6a7a2603be50ca321cdb5a67f1e22943027a5690bf0b0afcd86b83dd",
+      "content_sha256": "1c1827b7f369f0068cea43e2aab6214a609fe68085d39b75d92e85638f7b43af"
     },
     "nyx.core.systematic-debugging": {
       "origin": "adapted",
       "source": "superpowers",
       "upstream_skill": "systematic-debugging",
-      "local_hash": "sha256:f4d2920d8e79950a60ee8a1f95d036202af64cc5c0d03e6bb79bc8466c35c250"
+      "local_hash": "sha256:f4d2920d8e79950a60ee8a1f95d036202af64cc5c0d03e6bb79bc8466c35c250",
+      "content_sha256": "62b77c512d5af4306ffd5ce104c6d561d8fc187b93adef7a57b3447329c122f5"
     },
     "nyx.core.test-driven-development": {
       "origin": "adapted",
       "source": "superpowers",
       "upstream_skill": "test-driven-development",
-      "local_hash": "sha256:c81979916bc6883db3227157dbe274bcfed1abfc4c72960ddd4a182b76b9dec1"
+      "local_hash": "sha256:c81979916bc6883db3227157dbe274bcfed1abfc4c72960ddd4a182b76b9dec1",
+      "content_sha256": "1adf1502b39c0c72c52a6f8b632cc8d8594252dce98c7ee1176528a4cc0645e5"
     },
     "nyx.core.verification": {
       "origin": "adapted",
       "source": "superpowers",
       "upstream_skill": "verification-before-completion",
-      "local_hash": "sha256:6f0c5674b1cad9651c2dfafce73f62e2c5946f4cba316b5aa61f5b6536ed62e2"
+      "local_hash": "sha256:6f0c5674b1cad9651c2dfafce73f62e2c5946f4cba316b5aa61f5b6536ed62e2",
+      "content_sha256": "3f6a770033a2da6bf8ac34bafdce121dd4992f6dd27cc55882e48124947b6308"
     },
     "nyx.core.code-review": {
       "origin": "adapted",
       "source": "superpowers",
       "upstream_skill": "requesting-code-review",
-      "local_hash": "sha256:3d31400c79851ce55e78db4026463b21a4ba809831c49b8f7fd4670e2b9091ea"
+      "local_hash": "sha256:3d31400c79851ce55e78db4026463b21a4ba809831c49b8f7fd4670e2b9091ea",
+      "content_sha256": "b273f54eb6dcae0ab111edf8a2c7a99529baa5136082d678975e8c5a8a0b232b"
     },
     "nyx.core.git-worktrees": {
       "origin": "adapted",
       "source": "superpowers",
       "upstream_skill": "using-git-worktrees",
-      "local_hash": "sha256:d2227854a7a874154f93a9ef94bf10f02adbd32eddcad49165fc07f927abae6d"
+      "local_hash": "sha256:d2227854a7a874154f93a9ef94bf10f02adbd32eddcad49165fc07f927abae6d",
+      "content_sha256": "5484519fd303191370ffae629b75b017925288648ed43da838049d557191d4ad"
     },
     "nyx.core.executing-plans": {
       "origin": "adapted",
       "source": "superpowers",
       "upstream_skill": "executing-plans",
-      "local_hash": "sha256:c7a7df70e849785cd867ea28f1e8484e2f3fd09d035810f962b110e5271f2c83"
+      "local_hash": "sha256:c7a7df70e849785cd867ea28f1e8484e2f3fd09d035810f962b110e5271f2c83",
+      "content_sha256": "ea1f21dd84792d6dfb8f4c076f90b4c1f1d942973554bb7897a687a0b1f7d8f1"
     },
     "nyx.core.writing-skills": {
       "origin": "adapted",
       "source": "superpowers",
       "upstream_skill": "writing-skills",
-      "local_hash": "sha256:3193b7220933e2b2c9b5dc49cef7d3299754ba079c3fbcbfb1bc5cbd56e4d127"
+      "local_hash": "sha256:3193b7220933e2b2c9b5dc49cef7d3299754ba079c3fbcbfb1bc5cbd56e4d127",
+      "content_sha256": "ad51b5534654e3c0426d88193c35c5cdda456c7ac7a42a4bab48a5c21efa9ac1"
     },
     "nyx.core.context-engineering": {
       "origin": "adapted",
       "source": "skill.md-main",
       "upstream_skill": "context-engineering",
-      "local_hash": "sha256:7a2e16a857e1748dc545bb33e40db6bdb0d25534068c972d2e079749b831cd59"
+      "local_hash": "sha256:7a2e16a857e1748dc545bb33e40db6bdb0d25534068c972d2e079749b831cd59",
+      "content_sha256": "f097e3098b7a69acc92cb1dc7a76f2319e24a1bf74df0d65dba961d4fdab2896"
     },
     "nyx.engineering.api-design": {
       "origin": "adapted",
       "source": "skill.md-main",
       "upstream_skill": "api-and-interface-design",
-      "local_hash": "sha256:a9fc453b0b02a0589a6a48f45dd0f07a734a78b58d04b9fe1c42bf21f6e22c89"
+      "local_hash": "sha256:a9fc453b0b02a0589a6a48f45dd0f07a734a78b58d04b9fe1c42bf21f6e22c89",
+      "content_sha256": "28e7838a8d13a1dfa0d35c70129e7a0cd3c32585de7fac06d53ab4884d4b18ca"
     },
     "nyx.engineering.code-simplification": {
       "origin": "adapted",
       "source": "skill.md-main",
       "upstream_skill": "code-simplification",
-      "local_hash": "sha256:58dab03eaa964522bac55933224437fb82ed6c2315a07fec69b32b965b3583e7"
+      "local_hash": "sha256:58dab03eaa964522bac55933224437fb82ed6c2315a07fec69b32b965b3583e7",
+      "content_sha256": "136325e0418413ba692551306a3e1b668f35ebd7aec662013e586aa335ead46f"
     },
     "nyx.engineering.observability": {
       "origin": "adapted",
       "source": "skill.md-main",
       "upstream_skill": "observability-and-instrumentation",
-      "local_hash": "sha256:c3858333aefaf3aac6eb84e624d37da1a3a6eb93fb9a38e7af32e4e7c59f8a2f"
+      "local_hash": "sha256:c3858333aefaf3aac6eb84e624d37da1a3a6eb93fb9a38e7af32e4e7c59f8a2f",
+      "content_sha256": "4dc740d9fe01887647efbb1c8dcc5a6f5e49376f9a0c2f42d03f311a1a96dc7b"
     },
     "nyx.engineering.performance-optimization": {
       "origin": "adapted",
       "source": "skill.md-main",
       "upstream_skill": "performance-optimization",
-      "local_hash": "sha256:bbb66aae5087a20ba6f891991e042f1d7d05a036fba811fea38d968e4d89594e"
+      "local_hash": "sha256:bbb66aae5087a20ba6f891991e042f1d7d05a036fba811fea38d968e4d89594e",
+      "content_sha256": "92c5e115bfa7e5491b49531f429ca898ad7676666ec41421eb28e635f6167f2e"
     },
     "nyx.engineering.deprecation-migration": {
       "origin": "adapted",
       "source": "skill.md-main",
       "upstream_skill": "deprecation-and-migration",
-      "local_hash": "sha256:b6853fd4e4d3c07381b1b268e6d62df76d0f68f8ef7ad6ec3d2a626a0fc3fe8f"
+      "local_hash": "sha256:b6853fd4e4d3c07381b1b268e6d62df76d0f68f8ef7ad6ec3d2a626a0fc3fe8f",
+      "content_sha256": "39c530836f80786f9fcb3f5fc12b6f7871ec5c03a20ce44e70a97d1a7731b693"
     },
     "nyx.engineering.typescript-typecheck": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "typescript-typecheck",
-      "local_hash": "sha256:ce684692937ad8d523fb31b666b67474a5b8cc3b2cda210650037a47bb1d8a1b"
+      "local_hash": "sha256:ce684692937ad8d523fb31b666b67474a5b8cc3b2cda210650037a47bb1d8a1b",
+      "content_sha256": "618c2dcffe7350688eb602beb1986eb2ea395154ec34a34e6d280ac3221b57f6"
     },
     "nyx.engineering.react-component-testing": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "react-component-testing",
-      "local_hash": "sha256:f4df676d8f96fd8e1cd16248ca640c91cec46146504914de247229a024a19b2a"
+      "local_hash": "sha256:f4df676d8f96fd8e1cd16248ca640c91cec46146504914de247229a024a19b2a",
+      "content_sha256": "7043755c826e42ae3d32eac3aedf89ab8012e010183279111bfe0a789bfeb0e4"
     },
     "nyx.engineering.rest-api-design": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "rest-api-design",
-      "local_hash": "sha256:d0884afbdb4f5a4257aa5e51f2b612de436744d333bfc07fe0bb0e6586d9a7e9"
+      "local_hash": "sha256:d0884afbdb4f5a4257aa5e51f2b612de436744d333bfc07fe0bb0e6586d9a7e9",
+      "content_sha256": "67e76db0b40e77745c3dd8781dd00b3e5e5cf487ce31e4eeae660768e9639e3a"
     },
     "nyx.engineering.openapi-ts-client": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "openapi-ts-client",
-      "local_hash": "sha256:d0bfb0d8bf3c9abbe75f102c1d3f5a063e3036c42599d67a04d655ee1b1fa0fc"
+      "local_hash": "sha256:d0bfb0d8bf3c9abbe75f102c1d3f5a063e3036c42599d67a04d655ee1b1fa0fc",
+      "content_sha256": "4ae6c0b7a416f5328cb6f8b53b89c624ac1249ef7faf4002cc591a6322caa0a4"
     },
     "nyx.engineering.python-pipeline": {
       "origin": "adapted",
       "source": "journalism",
       "upstream_skill": "python-pipeline",
-      "local_hash": "sha256:e209a47d317bc8956870f08180c56a7a6190eea0914edca560f7d09b3b142f64"
+      "local_hash": "sha256:e209a47d317bc8956870f08180c56a7a6190eea0914edca560f7d09b3b142f64",
+      "content_sha256": "d9432dc3dcb1921b03a86c6b1cab6ee661d30a5b2eee735a2cde75b26c1bfb3f"
     },
     "nyx.engineering.documentation-adrs": {
       "origin": "adapted",
       "source": "skill.md-main",
       "upstream_skill": "documentation-and-adrs",
-      "local_hash": "sha256:7cee9adf6b79921bb32e17b24dc27cf26d03990ef12cef8f4b34f6c99c797ea1"
+      "local_hash": "sha256:7cee9adf6b79921bb32e17b24dc27cf26d03990ef12cef8f4b34f6c99c797ea1",
+      "content_sha256": "16f74fcbe3b3789f4aa82b32729ee5f16bb0f8b0b17975cb5b27341bcf993b47"
     },
     "nyx.product.requirements-analysis": {
       "origin": "nyx-native",
       "source": null,
       "upstream_skill": null,
-      "local_hash": "sha256:c3c394e93a4f1384d90df3f6534345c21310819c36c830b410bef0c7b8c14638"
+      "local_hash": "sha256:c3c394e93a4f1384d90df3f6534345c21310819c36c830b410bef0c7b8c14638",
+      "content_sha256": "e1317a1b04823cbf940c8f38ef7e08b162754613b8a04ab2f7dba08bf8a9dfae"
     },
     "nyx.product.prd-authoring": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "authoring-prd",
-      "local_hash": "sha256:11c130aedeb119516acd281d68f3d6c6074c5c11c68f3d763ac9590c9d1a1cce"
+      "local_hash": "sha256:11c130aedeb119516acd281d68f3d6c6074c5c11c68f3d763ac9590c9d1a1cce",
+      "content_sha256": "eac406b242c156e5c344b68d3fb14c92d9eddd67eca890cea2b7d97a6069afbf"
     },
     "nyx.product.feature-spec": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "authoring-feature-spec",
-      "local_hash": "sha256:dd9871be64533d3e1d0524daade273c6a75b8883c184d0c204430a3635ab977a"
+      "local_hash": "sha256:dd9871be64533d3e1d0524daade273c6a75b8883c184d0c204430a3635ab977a",
+      "content_sha256": "47fb957033e2259e65efa0fe69e4667eed6326ed71171a25148df520b6fd8050"
     },
     "nyx.product.technical-design": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "authoring-technical-design",
-      "local_hash": "sha256:f2c77307e70b1fc17b77d27af12167c967e576f5922d2dc667e98ed310483d82"
+      "local_hash": "sha256:f2c77307e70b1fc17b77d27af12167c967e576f5922d2dc667e98ed310483d82",
+      "content_sha256": "7d89cb77767f0a8dac0dc687f0e7633398ebb84c67111e4ca52a74b3550ab992"
     },
     "nyx.product.architecture-doc": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "authoring-architecture-doc",
-      "local_hash": "sha256:e14658404b85dc4667e11c6201b738f4e6b940ce38f6acf21b4c8b289c2a7445"
+      "local_hash": "sha256:e14658404b85dc4667e11c6201b738f4e6b940ce38f6acf21b4c8b289c2a7445",
+      "content_sha256": "311d2cabb752319e810f7b35a5a7225470350104cf688a58639ce447c4e84bbb"
     },
     "nyx.product.data-model": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "authoring-data-model",
-      "local_hash": "sha256:2bb68d0224d44d16af5602f7048f550109742c8b67fa05efe9cec1ddea4daa88"
+      "local_hash": "sha256:2bb68d0224d44d16af5602f7048f550109742c8b67fa05efe9cec1ddea4daa88",
+      "content_sha256": "6f9b43a2b89a4176c05746c6a2c24519432d6a1e80fe3ea2673fee74d2c1386f"
     },
     "nyx.product.test-plan": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "authoring-test-plan",
-      "local_hash": "sha256:a95a95e978b6c03d89f85e7bc7d8191dd6b880c5154e0e149df5281d368c7525"
+      "local_hash": "sha256:a95a95e978b6c03d89f85e7bc7d8191dd6b880c5154e0e149df5281d368c7525",
+      "content_sha256": "75b9bf59405976762e721836c892bff9f03ec7b298241e98b66a52c4e8deadb3"
     },
     "nyx.product.release-runbook": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "authoring-release-runbook",
-      "local_hash": "sha256:212d1d79f88caec0ede60c2bdeaaf7b688fc533697e8694f3d5ebe648855d7a6"
+      "local_hash": "sha256:212d1d79f88caec0ede60c2bdeaaf7b688fc533697e8694f3d5ebe648855d7a6",
+      "content_sha256": "2d652e5e9e0e36ad12e478d7b2a70765b1deff40d14c39ef432dc0102fca7e88"
     },
     "nyx.product.user-flows": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "authoring-user-flows",
-      "local_hash": "sha256:865ea99001bf577868bdf581291b55350d059beae1228f475af1d49d3b4c25bb"
+      "local_hash": "sha256:865ea99001bf577868bdf581291b55350d059beae1228f475af1d49d3b4c25bb",
+      "content_sha256": "67af2ae12c709be0a7970a158895de2907e93e8c8a61a63ed6ba60f3483465e6"
     },
     "nyx.product.design-review": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "design-review",
-      "local_hash": "sha256:894da2b94ee95feb76680ad74593307c66825e036c2ec244210088f8bd36ade3"
+      "local_hash": "sha256:894da2b94ee95feb76680ad74593307c66825e036c2ec244210088f8bd36ade3",
+      "content_sha256": "dc5afbe4f5c8d5610a972b7b43a234dd56e1d8affad356455e4e19e49f1a6a24"
     },
     "nyx.browser.extension-analyze": {
       "origin": "adapted",
       "source": "browser-extension-skills",
       "upstream_skill": "extension-analyze",
-      "local_hash": "sha256:9773e2a55c8a274d835439f1718277bfeacbf1dee574d2e208faf6c2e2ff8477"
+      "local_hash": "sha256:9773e2a55c8a274d835439f1718277bfeacbf1dee574d2e208faf6c2e2ff8477",
+      "content_sha256": "026a983b1a3026f2214be652461f2b3119282f0f4de7e505f01f9065411f66c5"
     },
     "nyx.browser.extension-create": {
       "origin": "adapted",
       "source": "browser-extension-skills",
       "upstream_skill": "extension-create",
-      "local_hash": "sha256:d137cace05b1a1bc294f55575b86fa2b3eba44148e6f88bd4c08a3dcb30cbab6"
+      "local_hash": "sha256:d137cace05b1a1bc294f55575b86fa2b3eba44148e6f88bd4c08a3dcb30cbab6",
+      "content_sha256": "33a9ff71a71eb6aa7ed10af24738a914e531c86d9da8b11bdfaf6c6a649f33c7"
     },
     "nyx.browser.extension-dev": {
       "origin": "adapted",
       "source": "browser-extension-skills",
       "upstream_skill": "extension-dev",
-      "local_hash": "sha256:0919198aa9a5af25e2c2dc139ccd4236ce5443234cbf5fe09ccb3e19a644a95e"
+      "local_hash": "sha256:0919198aa9a5af25e2c2dc139ccd4236ce5443234cbf5fe09ccb3e19a644a95e",
+      "content_sha256": "5a1de7049f733b0f8cc01419a84570cf13dce0240feb28d35b1ba2c3b8a38372"
     },
     "nyx.browser.extension-manifest": {
       "origin": "adapted",
       "source": "browser-extension-skills",
       "upstream_skill": "extension-manifest",
-      "local_hash": "sha256:5331b49f444f52c18fd1ccccfa8443cbd2d67b4f7f87ca44c319bb73d3097a74"
+      "local_hash": "sha256:5331b49f444f52c18fd1ccccfa8443cbd2d67b4f7f87ca44c319bb73d3097a74",
+      "content_sha256": "5efa82a986291f2c1dab816695c4dc7d60b142b7dcbadbed211852d01eb32b34"
     },
     "nyx.browser.extension-migration": {
       "origin": "adapted",
       "source": "browser-extension-skills",
       "upstream_skill": "extension-migration",
-      "local_hash": "sha256:d7fc13f3387c71962431996187ea33751e971b2d2c6e15567c3a7fabd063e939"
+      "local_hash": "sha256:d7fc13f3387c71962431996187ea33751e971b2d2c6e15567c3a7fabd063e939",
+      "content_sha256": "dbb8852802a0b63997ed7949c966aba2c2372c343a36b5902d9a38cab34b502a"
     },
     "nyx.browser.extension-test": {
       "origin": "adapted",
       "source": "browser-extension-skills",
       "upstream_skill": "extension-test",
-      "local_hash": "sha256:e394e7c34b9adba28564dee76525974178352457bc63d44041b5f45088e17b4e"
+      "local_hash": "sha256:e394e7c34b9adba28564dee76525974178352457bc63d44041b5f45088e17b4e",
+      "content_sha256": "4f68c153ef7d3b9ed549126afc5b5dd3831d9613b70b63b89d9a830dd14fa922"
     },
     "nyx.browser.extension-ui": {
       "origin": "adapted",
       "source": "browser-extension-skills",
       "upstream_skill": "extension-ui",
-      "local_hash": "sha256:502a5ce91fd809bc2d65ecadbe7a176135de59fb1afab1d07dba894571b69935"
+      "local_hash": "sha256:502a5ce91fd809bc2d65ecadbe7a176135de59fb1afab1d07dba894571b69935",
+      "content_sha256": "619821416a8b691ac22f70eddd3b14028e9ea6b403c17ea9ec970d6789d38dec"
     },
     "nyx.browser.extension-review": {
       "origin": "adapted",
       "source": "browser-extension-skills",
       "upstream_skill": "extension-review",
-      "local_hash": "sha256:0c45f3413d398add0b923ab4f322bcccea5b970e6e3175768e5ba18c02bc9cc9"
+      "local_hash": "sha256:0c45f3413d398add0b923ab4f322bcccea5b970e6e3175768e5ba18c02bc9cc9",
+      "content_sha256": "9a8f15efaf615dc7efe2974125555cd3fc7c74834feda2732ddec89939df0cc9"
     },
     "nyx.browser.extension-publish": {
       "origin": "adapted",
       "source": "browser-extension-skills",
       "upstream_skill": "extension-publish",
-      "local_hash": "sha256:a617aad510a3cc9853bfb09a8437f7fb84fb2b213fd172ebe29c6e835ab8917c"
+      "local_hash": "sha256:a617aad510a3cc9853bfb09a8437f7fb84fb2b213fd172ebe29c6e835ab8917c",
+      "content_sha256": "7e969a562314c41aa59c7485cd982b50f4185d79b8f850ebf066f9cff59b44d1"
     },
     "nyx.browser.extension-backend": {
       "origin": "adapted",
       "source": "browser-extension-skills",
       "upstream_skill": "extension-backend",
-      "local_hash": "sha256:7be9a2e78b9cce6ed0dfc5a35e8f8a5c218b889b55374846ec00695e9adde9e0"
+      "local_hash": "sha256:7be9a2e78b9cce6ed0dfc5a35e8f8a5c218b889b55374846ec00695e9adde9e0",
+      "content_sha256": "c16d5dfd60bf66c12acd7a64929967015dc873039065f44655d78d2203105923"
     },
     "nyx.browser.extension-assets": {
       "origin": "adapted",
       "source": "browser-extension-skills",
       "upstream_skill": "extension-assets",
-      "local_hash": "sha256:78e6957f03cbb0e74668af4beb76c9b1d8e3439745d1c35bf66abe64ebac355a"
+      "local_hash": "sha256:78e6957f03cbb0e74668af4beb76c9b1d8e3439745d1c35bf66abe64ebac355a",
+      "content_sha256": "43e28bf09b48e927b3cbd676eee28aedc8566ce6abedb1516b8b2f6b1339927d"
     },
     "nyx.uiux.frontend-ui-engineering": {
       "origin": "adapted",
       "source": "skill.md-main",
       "upstream_skill": "frontend-ui-engineering",
-      "local_hash": "sha256:0ad6bde875eee92969a3cc970bebbbe41fe14657122fae38ad321534855de4cb"
+      "local_hash": "sha256:0ad6bde875eee92969a3cc970bebbbe41fe14657122fae38ad321534855de4cb",
+      "content_sha256": "5f3a17687d9ad7be67ba80012ff1c8456d3bd46ee2aaf5c5ba779055167bb1b1"
     },
     "nyx.uiux.web-ui-best-practices": {
       "origin": "adapted",
       "source": "journalism",
       "upstream_skill": "web-ui-best-practices",
-      "local_hash": "sha256:fc57723ed488a39d24c7df2aaab1060b6f0a9c46f54233c433e69f570ec4dad0"
+      "local_hash": "sha256:fc57723ed488a39d24c7df2aaab1060b6f0a9c46f54233c433e69f570ec4dad0",
+      "content_sha256": "d78ef46ad170dc12f3fb6c7f2773a85d14b42b8a03165f6bbac6657cbe7e6a1b"
     },
     "nyx.uiux.accessibility-compliance": {
       "origin": "adapted",
       "source": "journalism",
       "upstream_skill": "accessibility-compliance",
-      "local_hash": "sha256:f0784d0126a43c03fb7a6f178547cd3757c0b5eb2e9503c93c0daccefef3ed78"
+      "local_hash": "sha256:f0784d0126a43c03fb7a6f178547cd3757c0b5eb2e9503c93c0daccefef3ed78",
+      "content_sha256": "89f5fcd930274b3e0234b4e88f4233f01f0d47e790e3a6c822d40702afd2f2bf"
     },
     "nyx.uiux.design-system": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "authoring-design-system",
-      "local_hash": "sha256:fdb393ad0794fd407618554cad8244a9c66b7f1d739d94c41ea1cd02bae0a51c"
+      "local_hash": "sha256:fdb393ad0794fd407618554cad8244a9c66b7f1d739d94c41ea1cd02bae0a51c",
+      "content_sha256": "e3d8f1d69540c84d9be6234f44131187a011d56b4cc6b2f48612bea12865462b"
     },
     "nyx.uiux.wireframes": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "authoring-wireframes",
-      "local_hash": "sha256:432492747240dcb4ef556b7aea6a95ca7ee56d530587e0207d48652012c6817b"
+      "local_hash": "sha256:432492747240dcb4ef556b7aea6a95ca7ee56d530587e0207d48652012c6817b",
+      "content_sha256": "c75f91e88aeba11e2c1b399f5f6a173013e0afe1bf17ce02b6ccde9c43dc4b5a"
     },
     "nyx.uiux.hi-fi": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "authoring-hi-fi",
-      "local_hash": "sha256:781b98488a2dac93335ced280b7fd8111a902aaa03ab85100f232e9894c5895c"
+      "local_hash": "sha256:781b98488a2dac93335ced280b7fd8111a902aaa03ab85100f232e9894c5895c",
+      "content_sha256": "d4b8f7a8e0d9124d3787c3e2cf3f7be9b60e65847c0db491e8269aef940ba2b6"
     },
     "nyx.uiux.ui-illustrations": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "ui-illustrations",
-      "local_hash": "sha256:13a265e2917d08234fd989b6a152a06645dd6345b2c611f19482a845ab201aeb"
+      "local_hash": "sha256:13a265e2917d08234fd989b6a152a06645dd6345b2c611f19482a845ab201aeb",
+      "content_sha256": "5be0e10046f9cb222e89eb163569ae673b3431ecd32135f8f2ba21889f2d6965"
     },
     "nyx.security.security-review": {
       "origin": "nyx-native",
       "source": null,
       "upstream_skill": null,
-      "local_hash": "sha256:86f4e14bb387efd9cd74e41e6c8b83192fb3c07fa0c8628c1c0a9a0c35ce8751"
+      "local_hash": "sha256:86f4e14bb387efd9cd74e41e6c8b83192fb3c07fa0c8628c1c0a9a0c35ce8751",
+      "content_sha256": "0a11bf48406a5a0831a6b4a1c8f72276c2905c64318aced07982b2c3a6ed188a"
     },
     "nyx.security.secure-auth": {
       "origin": "adapted",
       "source": "journalism",
       "upstream_skill": "secure-auth",
-      "local_hash": "sha256:a0b04ab4705ae6131d58a368a0f9dca10bd4d2de3ac129ff056369c22e739d0a"
+      "local_hash": "sha256:a0b04ab4705ae6131d58a368a0f9dca10bd4d2de3ac129ff056369c22e739d0a",
+      "content_sha256": "f5d499fb8b5f4cb200ef4c1820b5ec4aa28e7686c462f147b7cf5effac6f21a2"
     },
     "nyx.security.api-hardening": {
       "origin": "adapted",
       "source": "journalism",
       "upstream_skill": "api-hardening",
-      "local_hash": "sha256:0e233fb0416ff6f1348567af46dd8804a026950f9457a454303145369931b5a7"
+      "local_hash": "sha256:0e233fb0416ff6f1348567af46dd8804a026950f9457a454303145369931b5a7",
+      "content_sha256": "3e78867b62cc33751c2519ccd1d6ef0713d7cdd24f94d9c98102e110796e1a62"
     },
     "nyx.security.supply-chain-hardening": {
       "origin": "adapted",
       "source": "journalism",
       "upstream_skill": "supply-chain-hardening",
-      "local_hash": "sha256:3c1fd5a125d8d402fcd566ba8a761546819af836b5be4b21898515e6b0a08d5a"
+      "local_hash": "sha256:3c1fd5a125d8d402fcd566ba8a761546819af836b5be4b21898515e6b0a08d5a",
+      "content_sha256": "6e2096e9fbfcd901c892e2a129fe447365e44f1770825f662bac6ab89b0b9bd8"
     },
     "nyx.security.security-checklist": {
       "origin": "adapted",
       "source": "journalism",
       "upstream_skill": "security-checklist",
-      "local_hash": "sha256:07a92ef51555c4ac2ea693a9aa2c81c8d54f7da72c7e1a843d2c7ef31e360cf7"
+      "local_hash": "sha256:07a92ef51555c4ac2ea693a9aa2c81c8d54f7da72c7e1a843d2c7ef31e360cf7",
+      "content_sha256": "3e26e8d659d127f9b924313ae1f636607109f66c7b2e456be38138490dbb1de1"
     },
     "nyx.security.external-content-sanitizer": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "external-content-sanitizer",
-      "local_hash": "sha256:21c28abba0e568a4dbdc44cdc36a39a62227b3b6f9ddf1b5ffcb10196ae15a5f"
+      "local_hash": "sha256:21c28abba0e568a4dbdc44cdc36a39a62227b3b6f9ddf1b5ffcb10196ae15a5f",
+      "content_sha256": "a466d728d640f60192bf59f48d3fe80c1f664baea5b53d34e6eed6ab2faab251"
     },
     "nyx.research.literature-search": {
       "origin": "nyx-native",
       "source": null,
       "upstream_skill": null,
-      "local_hash": "sha256:48369a7295740e9e247c6de7530129a3fe02b63c99545dc5da7059144290f287"
+      "local_hash": "sha256:48369a7295740e9e247c6de7530129a3fe02b63c99545dc5da7059144290f287",
+      "content_sha256": "707fe19af50aa2039de576a6a7963d28cb89c1212523dd69edf994054899b153"
     },
     "nyx.research.prior-art-survey": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "code-prior-art-survey",
-      "local_hash": "sha256:e3f22274262b16942b0bdf62312b6ad0e756aa15ae2985b7e2f3d43e4d60e70a"
+      "local_hash": "sha256:e3f22274262b16942b0bdf62312b6ad0e756aa15ae2985b7e2f3d43e4d60e70a",
+      "content_sha256": "d83efcbfad2f6bdccddfb5de8fb0821e51178d85071d9f9d24cde550a58e346e"
     },
     "nyx.research.source-verification": {
       "origin": "adapted",
       "source": "journalism",
       "upstream_skill": "source-verification",
-      "local_hash": "sha256:440737f39b0c52d70f9eec4b921e388f222b74c03705a018f8fdad3d20b1ff56"
+      "local_hash": "sha256:440737f39b0c52d70f9eec4b921e388f222b74c03705a018f8fdad3d20b1ff56",
+      "content_sha256": "ece92bc388dc8775f5c324de42b2c874ecf8f12fef9149857954170e34f42791"
     },
     "nyx.research.web-scraping": {
       "origin": "adapted",
       "source": "journalism",
       "upstream_skill": "web-scraping",
-      "local_hash": "sha256:be8c07c7585d658e1902dda9c697473d781559a11ec4aed548e972c58fc3660d"
+      "local_hash": "sha256:be8c07c7585d658e1902dda9c697473d781559a11ec4aed548e972c58fc3660d",
+      "content_sha256": "ff7cc487079987fc793e88b439357a81d9474fcf0988cf902828029e3ccbd736"
     },
     "nyx.research.research-synthesis": {
       "origin": "nyx-native",
       "source": null,
       "upstream_skill": null,
-      "local_hash": "sha256:452235167e7b2dba8693b0958a55dce8f2b7aa9a2e56221522e430ed3be0eda6"
+      "local_hash": "sha256:452235167e7b2dba8693b0958a55dce8f2b7aa9a2e56221522e430ed3be0eda6",
+      "content_sha256": "523dbf53d4d3d88e2724d98dcbfb4fb90714c29b159ba196d3e561b218050929"
     },
     "nyx.research.project-document-discovery": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "project-document-discovery",
-      "local_hash": "sha256:7a4de94ba6bced0977e8e343b4b2cc0376b437fe1db350bd268d0386b0e9f5cd"
+      "local_hash": "sha256:7a4de94ba6bced0977e8e343b4b2cc0376b437fe1db350bd268d0386b0e9f5cd",
+      "content_sha256": "6a2bfd65a23bd83e6b8823cbdf837ce7c1160295e401b3154962368f33d508a5"
     },
     "nyx.academic.academic-writing": {
       "origin": "adapted",
       "source": "journalism",
       "upstream_skill": "academic-writing",
-      "local_hash": "sha256:232318273fefc48b7992d298eca59f8c2aecce61e44d6c3c010c5f35527c77bb"
+      "local_hash": "sha256:232318273fefc48b7992d298eca59f8c2aecce61e44d6c3c010c5f35527c77bb",
+      "content_sha256": "13572bf95d3838d00d0b2ef25c3a0f7700da34b24a97ce4a014e7cf22bcead9d"
     },
     "nyx.academic.paper-analysis": {
       "origin": "nyx-native",
       "source": null,
       "upstream_skill": null,
-      "local_hash": "sha256:fb9bd7a7bc497e9a57f1b120e1f6650dd15a3f75660bf058dbc248807d337023"
+      "local_hash": "sha256:fb9bd7a7bc497e9a57f1b120e1f6650dd15a3f75660bf058dbc248807d337023",
+      "content_sha256": "53b0d04e5492989543d87d2ddc91c4887b8371f39cba7a7ab7eb623cb5a5daee"
     },
     "nyx.academic.methodology-review": {
       "origin": "nyx-native",
       "source": null,
       "upstream_skill": null,
-      "local_hash": "sha256:adcebc206e479222bfd6ab42e97d3226a0a2302a969875d607e86e86465cede0"
+      "local_hash": "sha256:adcebc206e479222bfd6ab42e97d3226a0a2302a969875d607e86e86465cede0",
+      "content_sha256": "f0e4ab49538f938fa306b81956f06de25e61078735d84a5c5fc021a629132bc7"
     },
     "nyx.academic.reviewer-workflow": {
       "origin": "nyx-native",
       "source": null,
       "upstream_skill": null,
-      "local_hash": "sha256:9352c5298b1f7840a06af2136cb8192c485c79ab8ef09d19218dcbcb41123d08"
+      "local_hash": "sha256:9352c5298b1f7840a06af2136cb8192c485c79ab8ef09d19218dcbcb41123d08",
+      "content_sha256": "8d9988679d4479c9ac0ff6ca2a842684d3028a2f06f8cc51ae8a70479eecc6b6"
     },
     "nyx.academic.citation-audit": {
       "origin": "nyx-native",
       "source": null,
       "upstream_skill": null,
-      "local_hash": "sha256:fc7392017e32578d88fecf85c0fe696923b60684c6fe3ec580a0ad1271d27bd1"
+      "local_hash": "sha256:fc7392017e32578d88fecf85c0fe696923b60684c6fe3ec580a0ad1271d27bd1",
+      "content_sha256": "9530431da856a08a967486a518d06468ad4f664cb79e1a5570b554fe61e81d26"
     },
     "nyx.data-ai.ml-experiment-design": {
       "origin": "nyx-native",
       "source": null,
       "upstream_skill": null,
-      "local_hash": "sha256:971d1d0d84f85290cb84e59881e4103107d6c4971326d515cb63598abe5ea3df"
+      "local_hash": "sha256:971d1d0d84f85290cb84e59881e4103107d6c4971326d515cb63598abe5ea3df",
+      "content_sha256": "e88be1c606d7c7f902f5665b974c7cb59b7b2c6a6796af84dbcc579b1737fa9d"
     },
     "nyx.data-ai.dataset-audit": {
       "origin": "nyx-native",
       "source": null,
       "upstream_skill": null,
-      "local_hash": "sha256:291b6c92c9b5d795555f9e7428c5f8b10f394ad704535c057e773f7912aee95b"
+      "local_hash": "sha256:291b6c92c9b5d795555f9e7428c5f8b10f394ad704535c057e773f7912aee95b",
+      "content_sha256": "177e27c602ccd96678d7593b0f13949538423dd91b2e07c8703628b7d22ff6b6"
     },
     "nyx.data-ai.model-evaluation": {
       "origin": "nyx-native",
       "source": null,
       "upstream_skill": null,
-      "local_hash": "sha256:f9ffb0e5490c7520cfb85e98a0e396257419be0c7b1ca149514868f3488313b2"
+      "local_hash": "sha256:f9ffb0e5490c7520cfb85e98a0e396257419be0c7b1ca149514868f3488313b2",
+      "content_sha256": "7e05ff2fa66e89d7b60d0566bd3cb34597fd5fbade51a50adbd2347a8ee86d09"
     },
     "nyx.data-ai.ml-prior-art": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "ml-prior-art-survey",
-      "local_hash": "sha256:9225761446b49f6b8127b4d3482f06bce82f2e8b9cd0ac7fb828f97ead0e270f"
+      "local_hash": "sha256:9225761446b49f6b8127b4d3482f06bce82f2e8b9cd0ac7fb828f97ead0e270f",
+      "content_sha256": "25eb1ce9ead1d14a246a25ccbd41a9af96a15a69bddbcda56d461fa34f55eb23"
     },
     "nyx.data-ai.python-data-pipeline": {
       "origin": "nyx-native",
       "source": null,
       "upstream_skill": null,
-      "local_hash": "sha256:ae9fecd53dfbd5fe3d5ef3756c76c40ae1fe712eae5c415fd14cd880d047888f"
+      "local_hash": "sha256:ae9fecd53dfbd5fe3d5ef3756c76c40ae1fe712eae5c415fd14cd880d047888f",
+      "content_sha256": "7155343985965f0982a9e810366b66d7c59be53a94bf03b6068de7a5fa981d0c"
     },
     "nyx.documents.document-review": {
       "origin": "nyx-native",
       "source": null,
       "upstream_skill": null,
-      "local_hash": "sha256:4f3baaa2ab4e5c259a3e54bc16cfde5ea4067830994a81e58d1bba70fce57079"
+      "local_hash": "sha256:4f3baaa2ab4e5c259a3e54bc16cfde5ea4067830994a81e58d1bba70fce57079",
+      "content_sha256": "e63e25bf966f7c5440341fafcb400f315a025ac5fe46a50ca346106a3d85f255"
     },
     "nyx.documents.structured-rewrite": {
       "origin": "nyx-native",
       "source": null,
       "upstream_skill": null,
-      "local_hash": "sha256:fedcae2ed9871bd5d3ebfd0882b5ba74af5cb3f9826db32e7fde5696b75a9f02"
+      "local_hash": "sha256:fedcae2ed9871bd5d3ebfd0882b5ba74af5cb3f9826db32e7fde5696b75a9f02",
+      "content_sha256": "8f1d1d1a49a8801137636860ecba3afcd4c1095e35e2ed3f7715adb3faac46a1"
     },
     "nyx.documents.document-design": {
       "origin": "adapted",
       "source": "journalism",
       "upstream_skill": "document-design",
-      "local_hash": "sha256:ea8a0a698d97d908625b29acad12e454da557ec89aadad0639f383fbf98f94ca"
+      "local_hash": "sha256:ea8a0a698d97d908625b29acad12e454da557ec89aadad0639f383fbf98f94ca",
+      "content_sha256": "18f7d69621b7b4011c24810afdc4ec28d0f916f48ba091971e5b63598eef4a44"
     },
     "nyx.documents.api-reference": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "authoring-api-reference",
-      "local_hash": "sha256:f5e3ff4ff60d51c427f7f581308ee03701075d26a3c2448d28b1c3e320c2a63d"
+      "local_hash": "sha256:f5e3ff4ff60d51c427f7f581308ee03701075d26a3c2448d28b1c3e320c2a63d",
+      "content_sha256": "2c32bfa77b0aaaf7a9f12813d8ba98ba87d95b31b8e37d11fe64c79ae09b50e8"
     },
     "nyx.documents.developer-guide": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "authoring-developer-guide",
-      "local_hash": "sha256:d193ef5003b6edfd83bbc0e56d222d0598b07df95b18735c64494d9ed9a92269"
+      "local_hash": "sha256:d193ef5003b6edfd83bbc0e56d222d0598b07df95b18735c64494d9ed9a92269",
+      "content_sha256": "f60e1732c0ed1afc8f549f4c7e58f46dcbcc592ad307ad9fbaf336b06013c6a4"
     },
     "nyx.documents.user-guide": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "authoring-user-guide",
-      "local_hash": "sha256:4592f52e36cc54aaea2e9c4fc00d9aa924d1fd9dddd17c0619c70854ab3a4256"
+      "local_hash": "sha256:4592f52e36cc54aaea2e9c4fc00d9aa924d1fd9dddd17c0619c70854ab3a4256",
+      "content_sha256": "fe43368ced1975acf45866e56e9b1f9344ffcc38d9c11f849da8fc59496e9d7b"
     },
     "nyx.automation.ci-cd-automation": {
       "origin": "adapted",
       "source": "skill.md-main",
       "upstream_skill": "ci-cd-and-automation",
-      "local_hash": "sha256:6d8bf286efd1d26c710a0cfa32c7fb673d9db2fafc8e3190d142a721f619316b"
+      "local_hash": "sha256:6d8bf286efd1d26c710a0cfa32c7fb673d9db2fafc8e3190d142a721f619316b",
+      "content_sha256": "30e015a2e94225840a232ec9cbbae5d3e25df64fd22bd32435e7f8ec5b60496d"
     },
     "nyx.automation.github-cli-ops": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "github-cli-ops",
-      "local_hash": "sha256:117a98fc27b00b05e2b0ce92af7e55434d25e0e396c53bec7a21c98143c492d3"
+      "local_hash": "sha256:117a98fc27b00b05e2b0ce92af7e55434d25e0e396c53bec7a21c98143c492d3",
+      "content_sha256": "900f7ed6b16024e2ae015e189d5448f57d11f5b71f31e7b4516e4fff3e0f7307"
     },
     "nyx.automation.polyglot-git-hooks": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "polyglot-git-hooks",
-      "local_hash": "sha256:ccaa0e5c3a37a4ce8ce17ad48ab8d62c524e71facb06aa9a84741c783a8e7c06"
+      "local_hash": "sha256:ccaa0e5c3a37a4ce8ce17ad48ab8d62c524e71facb06aa9a84741c783a8e7c06",
+      "content_sha256": "17ede9ba26c226d5621ab7056ff62c8767bfc5ba37ebd5e5594d3342cca44316"
     },
     "nyx.automation.project-retrospective": {
       "origin": "adapted",
       "source": "journalism",
       "upstream_skill": "project-retrospective",
-      "local_hash": "sha256:f951250b28cc60f423b6d121e544b6ffb36311e53fe931d1343ae69d2aea4603"
+      "local_hash": "sha256:f951250b28cc60f423b6d121e544b6ffb36311e53fe931d1343ae69d2aea4603",
+      "content_sha256": "6788ecd1d7b070a6169732e60f3bec1d235a690be0f6f2c08971685d5374458d"
     },
     "nyx.devops.release-check": {
       "origin": "nyx-native",
       "source": null,
       "upstream_skill": null,
-      "local_hash": "sha256:9076bbb99ae650326868c9266fee0bfe76b45a226b564aa0ca03f03180d7ca92"
+      "local_hash": "sha256:9076bbb99ae650326868c9266fee0bfe76b45a226b564aa0ca03f03180d7ca92",
+      "content_sha256": "7a57b0530bd2df983a67de4e908e5909f664558e2a104fb298f0c07b946cff86"
     },
     "nyx.devops.deployment-review": {
       "origin": "nyx-native",
       "source": null,
       "upstream_skill": null,
-      "local_hash": "sha256:9b4d129f6ece049b1240960ec5a2278acea4cdc8b2c3c3702a8772fce839422b"
+      "local_hash": "sha256:9b4d129f6ece049b1240960ec5a2278acea4cdc8b2c3c3702a8772fce839422b",
+      "content_sha256": "5fbe8123d8e0f469b3accdacaa6222b194b13cffec978e2794355ee10a813bc4"
     },
     "nyx.devops.cloudflare-pages-ops": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "cloudflare-pages-ops",
-      "local_hash": "sha256:516b39fa3bddd2fdd8d1c220e937b39a6ca4dd05949bd8dceb35fadf692b0c05"
+      "local_hash": "sha256:516b39fa3bddd2fdd8d1c220e937b39a6ca4dd05949bd8dceb35fadf692b0c05",
+      "content_sha256": "f37f6c89bf97d90d3fae02b2dfffdcebc27e24df110666c36b8397821616c391"
     },
     "nyx.devops.netlify-ops": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "netlify-ops",
-      "local_hash": "sha256:95be6aed7369f60c7f004f98b7df33cea70627bbaebe60abb8c9931abff19e91"
+      "local_hash": "sha256:95be6aed7369f60c7f004f98b7df33cea70627bbaebe60abb8c9931abff19e91",
+      "content_sha256": "c57458ed1d948dfdf490ebd13589a2e85cd773a0086c4ca4dee77b3538d5d291"
     },
     "nyx.devops.jenkins-rest-ops": {
       "origin": "adapted",
       "source": "agent-skills",
       "upstream_skill": "jenkins-rest-ops",
-      "local_hash": "sha256:6226cbbc8797fcb3c8fba17f62015bef13cda5f704df361a06adde850e8f36e0"
+      "local_hash": "sha256:6226cbbc8797fcb3c8fba17f62015bef13cda5f704df361a06adde850e8f36e0",
+      "content_sha256": "ab697100707d818e57011aa953a8a6c100c92ea0a85efb6e3515eb122b7e459b"
     },
     "nyx.core.nyxskill-router": {
       "origin": "nyx-native",
       "source": null,
       "upstream_skill": null,
-      "local_hash": "sha256:16b037a16e4649387500a579d54a7bd540f19ba0c0e9949fb02701502aa961f8"
+      "local_hash": "sha256:16b037a16e4649387500a579d54a7bd540f19ba0c0e9949fb02701502aa961f8",
+      "content_sha256": "79e53c6c80366983547c3d90a5842e3f9ab0745e7b978f3fa1a07b7831381d59"
+    },
+    "nyx.reverse-engineering.android-reverse": {
+      "origin": "nyx-native",
+      "source": null,
+      "upstream_skill": null,
+      "content_sha256": "bd6f37e1d1ae89e28df116025044696838b36710fa0640752c4803430ba1c77c"
+    },
+    "nyx.reverse-engineering.binary-analysis": {
+      "origin": "nyx-native",
+      "source": null,
+      "upstream_skill": null,
+      "content_sha256": "93b5f9888b42964ea127a284ed409e8246c8647380102fabc3e00dcb48f71823"
+    },
+    "nyx.reverse-engineering.dotnet-reverse": {
+      "origin": "nyx-native",
+      "source": null,
+      "upstream_skill": null,
+      "content_sha256": "6cff3e07ca5eec75f165bcba570936f08ac5761167cfc86141aa1700fce415a5"
+    },
+    "nyx.reverse-engineering.firmware-analysis": {
+      "origin": "nyx-native",
+      "source": null,
+      "upstream_skill": null,
+      "content_sha256": "b291a0edf29ec2d4bff5d3c4ffbcab212eb3fac451e5b19ef41ad84130c4886b"
+    },
+    "nyx.reverse-engineering.javascript-reverse": {
+      "origin": "nyx-native",
+      "source": null,
+      "upstream_skill": null,
+      "content_sha256": "ca2dab6edda330faef87732fd604c29ca2813f13539c0e34cfa828b8871013cb"
+    },
+    "nyx.reverse-engineering.protocol-analysis": {
+      "origin": "nyx-native",
+      "source": null,
+      "upstream_skill": null,
+      "content_sha256": "ac12335beaadcc40ef8ffdfdafd88fc84b8adc2acf8fb9071b3a242ea1b63e81"
+    },
+    "nyx.reverse-engineering.reverse-report": {
+      "origin": "nyx-native",
+      "source": null,
+      "upstream_skill": null,
+      "content_sha256": "ee8b1e3c078d5d62e6543b2c7b06e8aebc950f6086050c42ad93853bb993232c"
+    },
+    "nyx.reverse-engineering.reverse-triage": {
+      "origin": "nyx-native",
+      "source": null,
+      "upstream_skill": null,
+      "content_sha256": "e037e1a4b298e0f86ec6e0f0047771b5ce08974e4f9f05ca23756bc46641ab50"
+    },
+    "nyx.image-media.universal-image-studio": {
+      "origin": "nyx-native",
+      "source": null,
+      "upstream_skill": null,
+      "content_sha256": "61a63965f7cf0a55e72883a86c724a000022fd67580342747c3d596e62cfa6b0"
     }
-  }
+  },
+  "content_hash_format": "sha256(relative-path NUL bytes NUL), sorted recursive skill files"
 }

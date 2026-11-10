@@ -1,7 +1,7 @@
 {
   "id": "nyx.devops",
   "name": "Nyx Devops Pack",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "api_version": 1,
   "namespace": "nyx.devops",
   "profiles": [

@@ -16,8 +16,15 @@ test('portable release contains direct skills, all runtimes, notices, and checks
     assert.ok(names.has('runtimes/inwjud/skills/core/systematic-debugging/skill.yaml'));
     assert.ok(names.has('runtimes/codex/AGENTS.md'));
     assert.ok(names.has('THIRD_PARTY_NOTICES.md'));
+    assert.ok(names.has('dist/src/cli.js'));
+    assert.ok(names.has('plugin-ecosystem/.agents/plugins/marketplace.json'));
+    const source=await readZip(result.sourceZip);
+    assert.equal(source.some(e=>e.name.endsWith('.zip') || e.name.includes('node_modules/')),false);
     assert.ok(result.sourceZip);
     const sums=await readFile(result.checksums,'utf8');
-    assert.match(sums,/NyxSkill-v1\.0\.0-portable\.zip/);
+    assert.match(sums,/NyxSkill-v1\.2\.0-portable\.zip/);
+    const again=await buildReleaseArtifacts(resolve('.'),join(out,'again'),{includeSource:true});
+    assert.deepEqual(await readFile(result.portableZip),await readFile(again.portableZip));
+    assert.deepEqual(await readFile(result.sourceZip),await readFile(again.sourceZip));
   }finally{await rm(out,{recursive:true,force:true});}
 });

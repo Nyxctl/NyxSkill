@@ -1,0 +1,60 @@
+{
+  "id": "nyx.image-media.universal-image-studio",
+  "name": "universal-image-studio",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "image-media.universal-image-studio",
+  "type": "domain",
+  "profiles": [
+    "universal"
+  ],
+  "description": "Generate, analyze, or edit reference-driven images with native image tools and local pixel-preserving mask compositing.",
+  "routing": {
+    "priority": 76,
+    "triggers": {
+      "keywords": [
+        "universal image studio",
+        "image generation",
+        "targeted image edit",
+        "mask compositing",
+        "reference image analysis",
+        "rimworld menu background",
+        "แก้ภาพเฉพาะจุด",
+        "สร้างภาพจาก reference"
+      ],
+      "intents": []
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write"
+    ]
+  },
+  "risk": {
+    "level": "safe-write",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "codex"
+    ]
+  },
+  "provenance": {
+    "origin": "nyx-native",
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

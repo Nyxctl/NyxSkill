@@ -1,0 +1,12 @@
+{
+  "skill": "nyx.reverse-engineering.reverse-report",
+  "origin": "nyx-native",
+  "source": null,
+  "upstream_skill": null,
+  "upstream_version": null,
+  "license": "MIT",
+  "changes": [
+    "Independently authored static-first workflow for the ecosystem expansion; no upstream code or prose copied.",
+    "Reference evaluation: provenance/reverse-engineering-sources.md"
+  ]
+}

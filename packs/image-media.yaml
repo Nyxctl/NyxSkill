@@ -1,0 +1,18 @@
+{
+  "id": "nyx.image-media",
+  "name": "Nyx Image & Media Pack",
+  "version": "1.0.0",
+  "api_version": 1,
+  "namespace": "nyx.image-media",
+  "profiles": [
+    "universal"
+  ],
+  "skills": [
+    "nyx.image-media.universal-image-studio"
+  ],
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  },
+  "trust": "first-party"
+}

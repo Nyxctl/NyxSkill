@@ -4,6 +4,7 @@ import { mkdtemp, mkdir, writeFile, rm, access } from 'node:fs/promises';
 import { tmpdir, homedir } from 'node:os';
 import { join } from 'node:path';
 import { buildNyxPack, verifyNyxPack, installNyxPack } from '../dist/src/packs.js';
+import { readZip } from '../dist/src/zip.js';
 
 function skill(level='safe-write') { return {
   id:'community.demo.hello', name:'Hello', version:'1.0.0', api_version:1, category:'demo.hello', type:'domain', profiles:['universal'], description:'Demo skill',
@@ -23,7 +24,11 @@ test('builds and verifies a safe community nyxpack', async()=>{
   const tmp=await mkdtemp(join(tmpdir(),'nyx-pack-'));
   try{
     const src=join(tmp,'src'); await makePack(src);
+    const privateStore=join(src,'skills','hello','.nyxskill','learning');
+    await mkdir(privateStore,{recursive:true});
+    await writeFile(join(privateStore,'lesson.json'),'{"local":"fixture"}');
     const out=join(tmp,'demo.nyxpack'); await buildNyxPack(src,out);
+    assert.equal((await readZip(out)).some(entry => entry.name.includes('.nyxskill')),false);
     const report=await verifyNyxPack(out);
     assert.equal(report.ok,true,report.issues.join('\n'));
     assert.equal(report.pack.id,'community.demo');

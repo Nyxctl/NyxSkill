@@ -1,0 +1,23 @@
+{
+  "id": "reverse-engineering",
+  "name": "Reverse Engineering",
+  "includes": [],
+  "triggers": {
+    "keywords": [
+      "reverse",
+      "decompile",
+      "disassemble",
+      "apk",
+      "dex",
+      "elf",
+      "firmware",
+      "pcap",
+      "packet",
+      "minified",
+      "electron",
+      "rimworld",
+      ".net",
+      "managed"
+    ]
+  }
+}

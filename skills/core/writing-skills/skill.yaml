@@ -1,13 +1,12 @@
 {
   "id": "nyx.core.writing-skills",
   "name": "Writing Skills",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "api_version": 1,
   "category": "core.writing-skills",
   "type": "domain",
   "profiles": [
-    "coding",
-    "product"
+    "universal"
   ],
   "description": "Design, write, test, and review reusable agent skills with clear triggers, scope, workflow, and verification.",
   "routing": {
@@ -16,7 +15,12 @@
       "keywords": [
         "skill authoring",
         "write skill",
-        "skill.md"
+        "skill.md",
+        "create skill",
+        "create a skill",
+        "สร้าง skill",
+        "สร้างskill",
+        "สร้างสกิล"
       ],
       "intents": [
         "author"

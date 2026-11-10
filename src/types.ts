@@ -16,6 +16,7 @@ export type OriginType = typeof ORIGIN_TYPES[number];
 export interface RoutingTriggers {
   keywords: string[];
   intents: string[];
+  negative_keywords?: string[];
 }
 
 export interface SkillMeta {

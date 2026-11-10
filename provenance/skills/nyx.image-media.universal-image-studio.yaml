@@ -1,0 +1,12 @@
+{
+  "skill": "nyx.image-media.universal-image-studio",
+  "origin": "nyx-native",
+  "source": null,
+  "upstream_skill": null,
+  "upstream_version": null,
+  "license": "MIT",
+  "reviewed_at": "2026-11-10",
+  "changes": [
+    "Implemented user-supplied Universal Image Studio v2 as a NyxSkill workflow with an independent ChatGPT Projects adapter."
+  ]
+}

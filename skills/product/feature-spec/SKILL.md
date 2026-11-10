@@ -2,7 +2,7 @@
 name: Feature Spec
 description: "Specify feature behavior, states, edge cases, acceptance criteria, dependencies, and rollout considerations."
 id: nyx.product.feature-spec
-version: 1.0.0
+version: 1.1.0
 ---
 # Feature Spec
 
@@ -24,6 +24,11 @@ Collect the relevant project files, constraints, current behavior, and verificat
 3. Prefer project-native conventions and inspect existing evidence before proposing change.
 4. Make the smallest justified decisions or changes, keeping assumptions explicit.
 5. Verify the result with concrete evidence appropriate to the task and report unresolved risks.
+
+## Incremental Specification
+State the concrete user problem, current behavior, desired behavior, constraints, and explicit non-goals. Discover the repository's commands and architecture before specifying implementation details. Identify the affected interfaces and consumers, data ownership, failure states, authorization boundaries, and migration or compatibility requirements.
+
+Write observable acceptance criteria with representative normal, invalid, and boundary cases. Divide the feature into the smallest useful increments; each increment must name files/interfaces, prerequisites, and verification evidence. Keep assumptions separate from decisions. Update the existing specification when scope changes instead of maintaining a competing Addy-specific planning system.
 
 ## Decision Rules
 - Distinguish observed evidence from assumptions.

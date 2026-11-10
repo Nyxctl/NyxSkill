@@ -1,0 +1,65 @@
+{
+  "id": "nyx.reverse-engineering.reverse-triage",
+  "name": "Reverse Triage",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "reverse-engineering.reverse-triage",
+  "type": "process",
+  "profiles": [
+    "reverse-engineering"
+  ],
+  "description": "Identify artifact formats, architecture and platform from static headers; record hashes and choose the next analysis workflow.",
+  "routing": {
+    "priority": 88,
+    "triggers": {
+      "keywords": [
+        "reverse engineering",
+        "reverse triage",
+        "identify binary",
+        "analyze sample"
+      ],
+      "intents": [
+        "reverse-triage"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write",
+      "shell"
+    ]
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "nyx-native",
+    "source": null,
+    "adapted_from": null,
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

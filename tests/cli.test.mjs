@@ -65,3 +65,36 @@ test('explicit NyxSkill review routes to focused domain reviewers', () => {
   assert.equal(ids.at(-1), 'nyx.core.verification');
   assert.ok(ids.length <= 6, `over-routed ${ids.length}: ${ids.join(', ')}`);
 });
+
+test('cli stages verifies discovers and removes a generated plugin',async()=>{
+ const {mkdtemp,rm}=await import('node:fs/promises');
+ const {tmpdir}=await import('node:os');
+ const {join}=await import('node:path');
+ const temp=await mkdtemp(join(tmpdir(),'nyx-cli-plugin-'));
+ try {
+  const output=join(temp,'output'),store=join(temp,'store');
+  const built=JSON.parse(run(['plugin','build','--pack','nyx.reverse-engineering','--out',output]));
+  assert.deepEqual(built.plugins,['nyx-reverse-engineering']);
+  const path=join(output,'plugins','nyx-reverse-engineering');
+  assert.equal(JSON.parse(run(['plugin','verify',path])).ok,true);
+  run(['plugin','install',path,'--store',store]);
+  assert.equal(JSON.parse(run(['plugin','list','--store',store])).length,1);
+  run(['plugin','remove','nyx-reverse-engineering','--store',store]);
+  assert.deepEqual(JSON.parse(run(['plugin','list','--store',store])),[]);
+ } finally {await rm(temp,{recursive:true,force:true});}
+});
+test('optional CLI integrations default to disabled without external services',()=>{
+ for(const name of ['graphify','omniroute','omniroute-health']) assert.equal(JSON.parse(run(['integration',name])).status,'disabled');
+});
+
+test('CLI connects capability inventory without executing actions',async()=>{
+ const {mkdtemp,writeFile,rm}=await import('node:fs/promises');const {tmpdir}=await import('node:os');const {join}=await import('node:path');
+ const temp=await mkdtemp(join(tmpdir(),'nyx-capability-cli-'));
+ try {
+  const snapshot=join(temp,'inventory.json');await writeFile(snapshot,JSON.stringify({plugins:[],tools:[],builtins:[{name:'web__run',capabilities:['web.read'],readOnly:true}]}));
+  const cap=JSON.parse(run(['capability','route','ค้นหาข้อมูลบนเว็บ','--inventory',snapshot]));
+  assert.equal(cap.selected[0].tool,'web__run');assert.equal(cap.execution,'host-only');
+  const route=JSON.parse(run(['route','ค้นหาข้อมูลบนเว็บ','--inventory',snapshot,'--json']));
+  assert.equal(route.capabilities.execution,'host-only');
+ } finally {await rm(temp,{recursive:true,force:true});}
+});

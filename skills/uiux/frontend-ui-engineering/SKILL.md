@@ -2,7 +2,7 @@
 name: Frontend Ui Engineering
 description: "Implement robust responsive interfaces with semantic structure, maintainable components, state discipline, and performance."
 id: nyx.uiux.frontend-ui-engineering
-version: 1.0.0
+version: 1.1.0
 ---
 # Frontend Ui Engineering
 
@@ -24,6 +24,11 @@ Collect the relevant project files, constraints, current behavior, and verificat
 3. Prefer project-native conventions and inspect existing evidence before proposing change.
 4. Make the smallest justified decisions or changes, keeping assumptions explicit.
 5. Verify the result with concrete evidence appropriate to the task and report unresolved risks.
+
+## Frontend Integration Review
+Inspect existing design tokens and components before adding UI. Keep semantic HTML, keyboard navigation, visible focus, labels, loading/empty/error states, and responsive layouts part of acceptance criteria. Validate the actual user flow at representative viewport sizes when a browser is available, and distinguish that evidence from DOM or fixture tests.
+
+For React/Next.js changes, investigate independent requests that can run together, unnecessary client boundaries, server-to-client serialization, repeated renders, and large dependency imports only where the affected flow warrants it. Preserve accessibility and user-visible behavior while optimizing, and measure the relevant bottleneck. Do not force React rules onto another framework or install UI/UX Pro Max tooling implicitly.
 
 ## Decision Rules
 - Distinguish observed evidence from assumptions.

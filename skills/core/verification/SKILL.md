@@ -39,3 +39,6 @@ Use fresh evidence: tests, static checks, source comparison, runtime inspection,
 
 ## Handoff / Completion
 Report what was done, what was verified, and any remaining uncertainty or follow-up.
+
+## Verify a learning procedure
+For a project using the Learning Loop, use `learn show` for the procedure digest and `learn verify` with evidence from the actual run plus independently recorded expected run and source identity. Confirm the requested checks were exercised before listing their IDs as passed. Guest evidence verification is deferred. A retrieved procedure is a starting point and requires verification in the current run.

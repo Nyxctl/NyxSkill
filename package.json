@@ -1,6 +1,6 @@
 {
   "name": "nyxskill",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "NyxSkill universal deterministic skill router and cross-runtime skill pack",
   "type": "module",
   "bin": {
@@ -26,7 +26,8 @@
     "nyxskill.lock",
     "THIRD_PARTY_NOTICES.md",
     "README.md",
-    "INSTALL.md"
+    "INSTALL.md",
+    "docs"
   ],
   "license": "MIT",
   "devDependencies": {

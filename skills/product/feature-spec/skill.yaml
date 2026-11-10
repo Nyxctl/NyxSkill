@@ -1,7 +1,7 @@
 {
   "id": "nyx.product.feature-spec",
   "name": "Feature Spec",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "api_version": 1,
   "category": "product.feature-spec",
   "type": "domain",
