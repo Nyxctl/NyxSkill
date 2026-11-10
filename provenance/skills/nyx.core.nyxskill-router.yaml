@@ -6,6 +6,7 @@
   "upstream_version": null,
   "license": "MIT",
   "changes": [
-    "authored as explicit NyxSkill v1 entry-point router"
+    "authored as explicit NyxSkill v1 entry-point router",
+    "1.2.0: added minimal host capability selection, provider skill dispatch and NyxVMTest preflight boundaries"
   ]
 }

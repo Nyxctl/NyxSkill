@@ -14,6 +14,7 @@ async function walk(root: string, predicate: (name: string) => boolean): Promise
     try { entries = await readdir(dir, { withFileTypes: true }); } catch { return; }
     entries.sort((a, b) => a.name.localeCompare(b.name));
     for (const entry of entries) {
+      if (entry.name.toLowerCase() === '.nyxskill') continue;
       const path = join(dir, entry.name);
       if (entry.isDirectory()) await visit(path);
       else if (predicate(entry.name)) out.push(path);

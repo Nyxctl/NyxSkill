@@ -1,7 +1,7 @@
 {
   "id": "nyx.core.code-review",
   "name": "Code Review",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "api_version": 1,
   "category": "core.code-review",
   "type": "policy",

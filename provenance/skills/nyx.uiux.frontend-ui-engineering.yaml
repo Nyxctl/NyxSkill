@@ -9,6 +9,7 @@
     "normalized to NyxSkill canonical schema",
     "added deterministic routing metadata",
     "added capability/risk declarations",
-    "rewritten as cross-runtime Nyx workflow"
+    "rewritten as cross-runtime Nyx workflow",
+    "added component reuse, responsive accessibility, and measured React performance checks (original Nyx wording; no upstream hooks or scripts copied)"
   ]
 }

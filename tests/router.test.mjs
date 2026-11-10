@@ -66,3 +66,27 @@ test('routing is deterministic across repeated runs', () => {
   const baseline = JSON.stringify(routeRequest(registry, 'Chrome extension login broke after API update', { runtime: 'inwjud' }));
   for (let i = 0; i < 25; i++) assert.equal(JSON.stringify(routeRequest(registry, 'Chrome extension login broke after API update', { runtime: 'inwjud' })), baseline);
 });
+
+for (const failure of ['missing', 'runtime', 'conflict', 'cycle']) {
+  test(`rejects dependent when dependency has ${failure} failure`, () => {
+    const a = meta('nyx.test.a', 'domain', ['coding'], ['target'], [], { composition: { requires: ['nyx.test.b'] } });
+    const b = meta('nyx.test.b', 'domain', ['coding'], [], []);
+    if (failure === 'runtime') b.runtime.supported = ['agents'];
+    if (failure === 'conflict') b.conflicts_with = [a.id];
+    if (failure === 'cycle') b.composition.requires = [a.id];
+    const result = routeRequest({ ...registry, skills: [rec(a), ...(failure === 'missing' ? [] : [rec(b)])] }, 'target', { use: [a.id], runtime: 'codex' });
+    assert.deepEqual(result.chain, []);
+    assert.ok(result.rejected.some(x => x.id === a.id));
+  });
+}
+test('negative triggers exclude automatic matches but explicit selection is allowed', () => {
+  const a = meta('nyx.test.a', 'domain', ['coding'], ['target'], []);
+  a.routing.triggers.negative_keywords = ['skip target'];
+  const fixture = { ...registry, skills: [rec(a)] };
+  assert.equal(routeRequest(fixture, 'skip target', { profiles: ['coding'] }).chain.length, 0);
+  assert.equal(routeRequest(fixture, 'skip target', { use: [a.id] }).chain.length, 1);
+});
+test('capability allow list restricts required capabilities', () => {
+  const result = routeRequest(registry, 'login', { use: ['nyx.security.secure-auth'], policy: { allow: ['filesystem.*'] } });
+  assert.equal(result.chain.some(x => x.id === 'nyx.security.secure-auth'), false);
+});

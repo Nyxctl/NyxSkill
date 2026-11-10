@@ -6,6 +6,7 @@
   "upstream_version": null,
   "license": "MIT",
   "changes": [
-    "authored for NyxSkill v1"
+    "authored for NyxSkill v1",
+    "added artifact/provenance/readiness gates and explicit publication boundary (original Nyx wording; no upstream hooks or scripts copied)"
   ]
 }

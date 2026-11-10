@@ -1,0 +1,67 @@
+{
+  "id": "nyx.reverse-engineering.protocol-analysis",
+  "name": "Protocol Analysis",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "reverse-engineering.protocol-analysis",
+  "type": "domain",
+  "profiles": [
+    "reverse-engineering"
+  ],
+  "description": "Analyze authorized packet captures and serialization formats offline to document message structures and interfaces.",
+  "routing": {
+    "priority": 80,
+    "triggers": {
+      "keywords": [
+        "protocol analysis",
+        "packet capture",
+        "pcap analysis",
+        "serialization reverse"
+      ],
+      "intents": [
+        "protocol-analysis"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [
+      "nyx.reverse-engineering.reverse-triage"
+    ],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write",
+      "shell"
+    ]
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "nyx-native",
+    "source": null,
+    "adapted_from": null,
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "nyx.reverse-engineering.android-reverse",
+  "name": "Android Reverse",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "reverse-engineering.android-reverse",
+  "type": "domain",
+  "profiles": [
+    "reverse-engineering"
+  ],
+  "description": "Inspect APK/DEX structure, manifests, resources and native components with static Android analysis.",
+  "routing": {
+    "priority": 80,
+    "triggers": {
+      "keywords": [
+        "apk analysis",
+        "decompile apk",
+        "dex analysis",
+        "android reverse"
+      ],
+      "intents": [
+        "android-reverse"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [
+      "nyx.reverse-engineering.reverse-triage"
+    ],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write",
+      "shell"
+    ]
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "nyx-native",
+    "source": null,
+    "adapted_from": null,
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

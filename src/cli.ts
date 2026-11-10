@@ -1,15 +1,27 @@
 #!/usr/bin/env node
+import { inspectGraphify, inspectOmniRoute, probeOmniRouteHealth } from './integrations.js';
+import { validateDocuments } from './documents.js';
+import { parseCapabilityInventory, planCapabilities } from './capability-router.js';
+import { discoverCodexPlugins } from './codex-discovery.js';
+import { writeFile } from 'node:fs/promises';
+import { VERSION } from './version.js';
+import { buildPlugins, verifyPlugin, installPlugin, removePlugin, discoverPlugins } from './plugins.js';
 import { readFile, readdir, access } from 'node:fs/promises';
 import { resolve, join } from 'node:path';
 import { homedir } from 'node:os';
 import { loadRegistry } from './registry.js';
 import { routeRequest } from './router.js';
 import { validateRegistry } from './validation.js';
+import { assertProjectPolicy } from './schema.js';
 import { readDataFile } from './data.js';
 import type { Runtime } from './types.js';
 import { buildRuntime, buildAllRuntimes } from './adapters/index.js';
 import { buildIndex, indexStatus } from './indexer.js';
 import { syncCheck } from './sync.js';
+import { LearningStore } from './learning/store.js';
+import { draftOf, hash, label, object, parseDraft, parseScope, readJson, string } from './learning/records.js';
+import { retrieve, verifyEvidence } from './learning/workflow.js';
+import { propose } from './learning/proposal.js';
 import { buildNyxPack, verifyNyxPack, installNyxPack, removeNyxPack } from './packs.js';
 
 const args = process.argv.slice(2);
@@ -39,7 +51,7 @@ function humanList(title: string, rows: Array<{ id: string; name?: string; extra
   for (const row of rows) console.log(`- ${row.id}${row.name ? ` — ${row.name}` : ''}${row.extra ? ` [${row.extra}]` : ''}`);
 }
 function usage(): void {
-  console.log(`NyxSkill 1.0.0\n\nUsage: nyxskill [--root PATH] <command>\n\nDiscovery:\n  list [--json]\n  search <query> [--json]\n  inspect <skill-id> [--json]\n  route <request> [--profile p] [--use id] [--runtime name] [--explain] [--json]\n\nValidation:\n  validate [--all] [--json]\n  conflicts [--json]\n  audit [--json]\n  doctor [--json]\n  test [--json]\n\nCatalog:\n  profile list|inspect <id> [--json]\n  pack list|inspect <id> [--json]\n  provenance <skill-id> [--json]\n  sources [--json]\n  licenses [--json]\n\nRuntime & packs:\n  build --runtime <name>|--all [--out DIR]\n  install --runtime <name> [--out DIR]\n  index rebuild|status\n  sync --check\n  pack build <dir> <file.nyxpack>\n  pack verify <file.nyxpack>\n  pack add <file.nyxpack> [--store DIR]\n  pack remove <pack-id> [--store DIR]\n`);
+  console.log(`NyxSkill ${VERSION}\n\nUsage: nyxskill [--root PATH] <command>\n\nDiscovery:\n  capability discover [--tools FILE] [--out NEW_FILE]\n  capability inspect --inventory FILE\n  capability route REQUEST --inventory FILE [--provider NAME]\n  list [--json]\n  search <query> [--json]\n  inspect <skill-id> [--json]\n  route <request> [--profile p] [--use id] [--runtime name] [--explain] [--json]\n\nLearning:\n  learn record --from FILE [--project PATH]\n  learn list|show|verify|revise|retire|propose|recover\n  route REQUEST --learning --project PATH [--learning-scope FILE] [--learning-tag TAG]\n\nValidation:\n  validate [--all] [--json]\n  conflicts [--json]\n  audit [--json]\n  doctor [--json]\n  test [--json]\n\nCatalog:\n  profile list|inspect <id> [--json]\n  pack list|inspect <id> [--json]\n  provenance <skill-id> [--json]\n  sources [--json]\n  licenses [--json]\n\nRuntime & packs:\n  integration graphify --enable --graph FILE --schema VERSION\n  integration omniroute --enable --manifest FILE\n  integration omniroute-health --enable --allow-network --url http://127.0.0.1:PORT\n  plugin build --out DIR [--pack ID]\n  plugin verify DIR\n  plugin install DIR --store DIR [--update]\n  plugin list|remove NAME --store DIR\n  build --runtime <name>|--all [--out DIR]\n  install --runtime <name> [--out DIR]\n  index rebuild|status\n  sync --check\n  pack build <dir> <file.nyxpack>\n  pack verify <file.nyxpack>\n  pack add <file.nyxpack> [--store DIR]\n  pack remove <pack-id> [--store DIR]\n`);
 }
 
 async function fileExists(path: string): Promise<boolean> { try { await access(path); return true; } catch { return false; } }
@@ -51,9 +63,127 @@ async function main(): Promise<void> {
   const root = resolve(rootOption ?? process.cwd());
   const command = args.shift();
   if (!command || command === 'help' || command === '--help' || command === '-h') { usage(); return; }
-  if (command === '--version' || command === 'version') { console.log('1.0.0'); return; }
+  if (command === '--version' || command === 'version') { console.log(VERSION); return; }
 
   const registry = await loadRegistry(root);
+
+  if (command === 'learn') {
+    const sub = args.shift();
+    const store = new LearningStore(takeOption('--project') ?? process.cwd());
+    if (sub === 'list') { printJson(await store.list()); return; }
+    if (sub === 'recover') {
+      await store.recover(takeOption('--token') ?? '');
+      printJson({ recovered: true });
+      return;
+    }
+    const from = () => {
+      const file = takeOption('--from');
+      if (!file) throw new Error('--from FILE is required');
+      return readJson(resolve(file));
+    };
+    if (sub === 'record') {
+      const warning = await store.gitWarning();
+      if (warning) console.error(warning);
+      printJson(await store.record(await from()));
+      return;
+    }
+    const id = args.shift();
+    if (!id) throw new Error('Learning record ID is required');
+    const history = await store.history(id);
+    const current = history.at(-1);
+    if (!current) throw new Error('Learning record not found');
+    if (sub === 'show') { printJson({ record: current, procedureDigest: hash(draftOf(current)), history }); return; }
+    if (sub === 'propose') { printJson(await propose(current, registry)); return; }
+    const requested = takeOption('--revision');
+    const revision = requested === undefined ? current.revision : Number(requested);
+    if (!Number.isSafeInteger(revision) || revision < 1) throw new Error('Invalid expected revision');
+    if (sub === 'verify') {
+      const file = takeOption('--evidence'), expected = takeOption('--expected');
+      if (!file || !expected) throw new Error('learn verify requires --evidence FILE and --expected FILE');
+      const evidence = await readJson(resolve(file), 2 * 1024 * 1024);
+      const expectation = await readJson(resolve(expected));
+      printJson(await store.change(id,revision,(entry, entries) => verifyEvidence(entry, entries, evidence, expectation)));
+      return;
+    }
+    if (sub === 'revise') {
+      const draft = parseDraft(await from());
+      printJson(await store.change(id,revision,entry => {
+        if (entry.state === 'retired' || draft.kind !== entry.kind || draft.skillId !== entry.skillId) throw new Error('Revision must preserve the active record identity');
+        if (hash(draft) === hash(draftOf(entry))) return entry;
+        return { ...draft, schemaVersion: 1, id: entry.id, revision: entry.revision, createdAt: entry.createdAt,
+          updatedAt: entry.updatedAt, state: draft.kind === 'procedure' ? 'draft' : 'active', evidence: [] };
+      }));
+      return;
+    }
+    if (sub === 'retire') {
+      const reason = string(takeOption('--reason'));
+      printJson(await store.change(id,revision,entry => entry.state === 'retired' ? entry : { ...entry, state: 'retired', retireReason: reason }));
+      return;
+    }
+    throw new Error('Use learn record, list, show, verify, revise, retire, propose or recover');
+  }
+
+  if (command === 'capability') {
+    const sub=args.shift() ?? 'inspect';
+    const inventoryPath=takeOption('--inventory');
+    if(sub === 'discover') {
+      const toolsPath=takeOption('--tools');
+      const supplied=toolsPath ? JSON.parse(await readFile(resolve(toolsPath),'utf8')) : {};
+      const inventory=await discoverCodexPlugins(supplied.tools ?? []);
+      if(supplied.builtins) inventory.builtins=supplied.builtins;
+      const checked=parseCapabilityInventory(inventory);
+      const out=takeOption('--out'); if(out) await writeFile(resolve(out),JSON.stringify(checked,null,2)+'\n',{flag:'wx'});
+      printJson(checked); return;
+    }
+    if(!inventoryPath) throw new Error('capability requires --inventory FILE; installed plugins alone do not prove tools/auth readiness');
+    const inventory=parseCapabilityInventory(JSON.parse(await readFile(resolve(inventoryPath),'utf8')));
+    if(sub === 'inspect') {printJson(inventory);return;}
+    if(sub === 'route') {
+      const explicitProvider=takeOption('--provider');
+      const authorizedWrite=takeFlag('--authorized-write'),authorizedPublish=takeFlag('--authorized-publish'),authorizedMessaging=takeFlag('--authorized-messaging');
+      const request=args.join(' ').trim();if(!request)throw new Error('capability route requires a request');
+      printJson(planCapabilities(request,inventory,{explicitProvider,authorizedWrite,authorizedPublish,authorizedMessaging}));return;
+    }
+    throw new Error(`unknown capability command: ${sub}`);
+  }
+
+  if (command === 'integration') {
+    const name=args.shift(); const enabled=takeFlag('--enable');
+    if (name === 'graphify') {
+      printJson(await inspectGraphify({ enabled, graphPath:takeOption('--graph'), supportedSchemaVersions:takeManyOption('--schema') })); return;
+    }
+    if (name === 'omniroute') {
+      printJson(await inspectOmniRoute({ enabled, manifestPath:takeOption('--manifest') })); return;
+    }
+    if (name === 'omniroute-health') {
+      printJson(await probeOmniRouteHealth({ enabled, networkApproved:takeFlag('--allow-network'), baseUrl:takeOption('--url') })); return;
+    }
+    throw new Error('integration requires graphify, omniroute or omniroute-health');
+  }
+
+  if (command === 'plugin') {
+    const sub = args.shift() ?? 'list';
+    if (sub === 'build') {
+      const out = takeOption('--out'); if (!out) throw new Error('plugin build requires --out <new-directory>');
+      const packIds = takeManyOption('--pack');
+      printJson(await buildPlugins(root, resolve(out), { packIds: packIds.length ? packIds : undefined })); return;
+    }
+    if (sub === 'verify') {
+      const path=args.shift(); if (!path) throw new Error('plugin verify requires a directory');
+      const result=await verifyPlugin(resolve(path)); printJson(result); if (!result.ok) process.exitCode=1; return;
+    }
+    const store=takeOption('--store'); if (!store) throw new Error('plugin lifecycle requires --store <explicit-directory>');
+    if (sub === 'list') { printJson(await discoverPlugins(resolve(store))); return; }
+    if (sub === 'install') {
+      const path=args.shift(); if (!path) throw new Error('plugin install requires a source directory');
+      printJson(await installPlugin(resolve(path),resolve(store),{ update:takeFlag('--update') })); return;
+    }
+    if (sub === 'remove') {
+      const name=args.shift(); if (!name) throw new Error('plugin remove requires a name');
+      await removePlugin(name,resolve(store)); printJson({removed:name}); return;
+    }
+    throw new Error(`unknown plugin command: ${sub}`);
+  }
 
   if (command === 'list') {
     const skills = registry.skills.map(s => ({ id: s.meta.id, name: s.meta.name, type: s.meta.type, category: s.meta.category, profiles: s.meta.profiles }));
@@ -82,14 +212,35 @@ async function main(): Promise<void> {
   }
 
   if (command === 'route') {
+    const learningEnabled = takeFlag('--learning');
+    const projectPath = takeOption('--project');
+    const learningScope = takeOption('--learning-scope');
+    const learningTags = takeManyOption('--learning-tag').map(tag => string(tag, label));
+    const project = resolve(projectPath ?? (learningEnabled ? process.cwd() : root));
+    const inventoryPath=takeOption('--inventory');
     const runtime = takeOption('--runtime') as Runtime | undefined;
     const profiles = takeManyOption('--profile');
     const use = takeManyOption('--use');
     const capabilities = takeManyOption('--cap');
+    const policyPath=takeOption('--policy');
+    const policy=policyPath ? assertProjectPolicy(await readDataFile(resolve(policyPath))) : undefined;
     const request = args.join(' ').trim(); if (!request) throw new Error('route requires a request');
-    const result = routeRequest(registry, request, { runtime, profiles: profiles.length ? profiles : undefined, use: use.length ? use : undefined, capabilities: capabilities.length ? capabilities : undefined });
-    if (json) printJson(result);
+    const result = routeRequest(registry, request, { runtime, policy, profiles: profiles.length ? profiles : undefined, use: use.length ? use : undefined, capabilities: capabilities.length ? capabilities : undefined });
+    const capabilityPlan=inventoryPath ? planCapabilities(request,parseCapabilityInventory(JSON.parse(await readFile(resolve(inventoryPath),'utf8')))) : undefined;
+    let learning;
+    if (learningEnabled) {
+      const scope = learningScope ? parseScope(object(await readJson(resolve(learningScope)))) : undefined;
+      try {
+        const stored = await new LearningStore(project).list();
+        const match = retrieve(stored.records, { ...scope, platform: scope?.platform ?? process.platform,
+          skillIds: result.chain.map(step => step.id), tags: [...result.intents, ...learningTags], capabilities: scope?.capabilities ?? capabilities });
+        learning = { ...match, diagnostics: [...stored.diagnostics, ...match.diagnostics] };
+      } catch { learning = { lesson: null, procedure: null, diagnostics: ['Learning store unavailable'] }; }
+    }
+    if (json) printJson({...result,...(capabilityPlan?{capabilities:capabilityPlan}:{}),...(learning?{learning}:{})});
     else {
+      if(capabilityPlan) printJson({capabilities:capabilityPlan});
+      if(learning) printJson({learning});
       console.log(`Profiles: ${result.profiles.join(', ') || '(none)'}\nIntents: ${result.intents.join(', ') || '(none)'}`);
       console.log('Chain:'); for (const step of result.chain) console.log(`  ${step.id} (${step.type}, score=${step.score})`);
       if (explain) { console.log('Rejected:'); for (const r of result.rejected) console.log(`  ${r.id}: ${r.reason}`); }
@@ -99,6 +250,8 @@ async function main(): Promise<void> {
 
   if (command === 'validate') {
     const report = validateRegistry(registry);
+    report.issues.push(...await validateDocuments(registry));
+    report.ok = !report.issues.some(i=>i.severity==='error');
     if (json) printJson(report);
     else {
       if (report.ok) console.log(`NyxSkill registry valid: ${registry.skills.length} skills, ${registry.packs.length} packs, ${registry.profiles.length} profiles.`);

@@ -9,6 +9,7 @@
     "normalized to NyxSkill canonical schema",
     "added deterministic routing metadata",
     "added capability/risk declarations",
-    "rewritten as cross-runtime Nyx workflow"
+    "rewritten as cross-runtime Nyx workflow",
+    "added reuse review, caller tracing, and retained correctness/security/accessibility constraints (original Nyx wording; no upstream hooks or scripts copied)"
   ]
 }

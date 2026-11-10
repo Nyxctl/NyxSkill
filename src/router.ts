@@ -35,6 +35,7 @@ function policyBlock(skill: SkillMeta, options: RouteOptions): string | null {
   if (max && RISK_RANK[skill.risk.level] > RISK_RANK[max]) return `risk ${skill.risk.level} exceeds policy max ${max}`;
   for (const required of skill.capabilities.required) {
     if ((options.policy?.deny ?? []).some(pattern => capMatches(pattern, required))) return `required capability denied by policy: ${required}`;
+    if (options.policy?.allow && !options.policy.allow.some(pattern => capMatches(pattern, required))) return `required capability outside allow list: ${required}`;
     if (options.capabilities && !options.capabilities.includes(required)) return `required capability unavailable: ${required}`;
   }
   return null;
@@ -110,6 +111,7 @@ export function routeRequest(registry: Registry, request: string, options: Route
     const profileMatches = skill.profiles.includes('universal') || skill.profiles.some(p => activeProfiles.has(p));
     if (!explicit && !profileMatches) { rejected.push({ id: skill.id, reason: 'profile mismatch' }); continue; }
 
+    if (!explicit && (skill.routing.triggers.negative_keywords ?? []).some(k => keywordMatch(text, k))) { rejected.push({ id: skill.id, reason: 'negative trigger match' }); continue; }
     const matchedKeywords = skill.routing.triggers.keywords.filter(k => keywordMatch(text, k));
     const specificKeywords = matchedKeywords.filter(k => !genericProfileKeywords.has(k.toLowerCase()));
     const matchedIntents = skill.routing.triggers.intents.filter(i => intents.includes(i));
@@ -196,21 +198,40 @@ export function routeRequest(registry: Registry, request: string, options: Route
     else kept.push(c);
   }
 
-  // Expand hard dependencies if available and policy-compatible.
+  // Resolve each dependency closure transactionally: a partial workflow is unsafe.
   const byId = new Map(registry.skills.map(s => [s.meta.id, s]));
-  const selectedMap = new Map(kept.map(c => [c.record.meta.id, c]));
-  const stack = [...kept];
-  while (stack.length) {
-    const c = stack.pop()!;
-    for (const depId of c.record.meta.composition.requires) {
-      if (selectedMap.has(depId)) continue;
-      const dep = byId.get(depId);
-      if (!dep) { rejected.push({ id: depId, reason: `required by ${c.record.meta.id} but missing` }); continue; }
-      const blocked = policyBlock(dep.meta, options);
-      if (blocked) { rejected.push({ id: depId, reason: `required by ${c.record.meta.id}: ${blocked}` }); continue; }
-      const depCandidate: Candidate = { record: dep, score: dep.meta.routing.priority + 5, reasons: [`dependency:${c.record.meta.id}`, 'dependency:+5'], explicit: false };
-      selectedMap.set(depId, depCandidate); stack.push(depCandidate);
+  const selectedMap = new Map<string, Candidate>();
+  function conflictWith(a: SkillMeta, b: SkillMeta): boolean {
+    return a.conflicts_with.includes(b.id) || b.conflicts_with.includes(a.id)
+      || Boolean(a.id !== b.id && a.routing.exclusive_group && a.routing.exclusive_group === b.routing.exclusive_group);
+  }
+  for (const root of kept) {
+    const pending = new Map<string, Candidate>();
+    const visiting = new Set<string>();
+    function expand(c: Candidate): string | null {
+      const skill = c.record.meta;
+      if (visiting.has(skill.id)) return `dependency cycle at ${skill.id}`;
+      if (pending.has(skill.id) || selectedMap.has(skill.id)) return null;
+      if (options.runtime && !skill.runtime.supported.includes(options.runtime)) return `unsupported dependency runtime: ${skill.id}`;
+      const blocked = policyBlock(skill, options);
+      if (blocked) return `${skill.id}: ${blocked}`;
+      for (const other of [...selectedMap.values(), ...pending.values()]) {
+        if (conflictWith(skill, other.record.meta)) return `${skill.id} conflicts with ${other.record.meta.id}`;
+      }
+      pending.set(skill.id, c);
+      visiting.add(skill.id);
+      for (const depId of skill.composition.requires) {
+        const dep = byId.get(depId);
+        if (!dep) return `missing dependency: ${depId}`;
+        const error = expand({ record: dep, score: dep.meta.routing.priority + 5, reasons: [`dependency:${skill.id}`], explicit: false });
+        if (error) return error;
+      }
+      visiting.delete(skill.id);
+      return null;
     }
+    const error = expand(root);
+    if (error) rejected.push({ id: root.record.meta.id, reason: error });
+    else for (const [id, c] of pending) selectedMap.set(id, c);
   }
 
   // Add standard verification finalizer when work is selected.

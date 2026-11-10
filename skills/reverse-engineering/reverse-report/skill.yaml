@@ -1,0 +1,74 @@
+{
+  "id": "nyx.reverse-engineering.reverse-report",
+  "name": "Reverse Report",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "reverse-engineering.reverse-report",
+  "type": "domain",
+  "profiles": [
+    "reverse-engineering"
+  ],
+  "description": "Produce reproducible reverse-engineering reports with target hashes, authorization, tool versions, evidence, inferences and limitations.",
+  "routing": {
+    "priority": 80,
+    "triggers": {
+      "keywords": [
+        "reverse report",
+        "reverse engineering report",
+        "reversing findings"
+      ],
+      "intents": [
+        "reverse-report"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [
+      "nyx.reverse-engineering.reverse-triage"
+    ],
+    "before": [],
+    "after": [
+      "nyx.reverse-engineering.reverse-triage",
+      "nyx.reverse-engineering.binary-analysis",
+      "nyx.reverse-engineering.dotnet-reverse",
+      "nyx.reverse-engineering.android-reverse",
+      "nyx.reverse-engineering.javascript-reverse",
+      "nyx.reverse-engineering.protocol-analysis",
+      "nyx.reverse-engineering.firmware-analysis"
+    ]
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write",
+      "shell"
+    ]
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "nyx-native",
+    "source": null,
+    "adapted_from": null,
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

@@ -92,6 +92,7 @@ export function validateSkill(value: unknown): ValidationResult {
     if (!isObject(value.routing.triggers)) errors.push('routing.triggers must be an object');
     else {
       stringArray(value.routing.triggers.keywords, 'routing.triggers.keywords', errors);
+      if (value.routing.triggers.negative_keywords !== undefined) stringArray(value.routing.triggers.negative_keywords, 'routing.triggers.negative_keywords', errors);
       stringArray(value.routing.triggers.intents, 'routing.triggers.intents', errors, ID_RE);
     }
   }

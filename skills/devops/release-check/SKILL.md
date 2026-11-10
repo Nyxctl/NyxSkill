@@ -2,7 +2,7 @@
 name: Release Check
 description: "Run pre-release quality, compatibility, security, artifact, changelog, versioning, and rollback checks before publishing."
 id: nyx.devops.release-check
-version: 1.0.0
+version: 1.1.0
 ---
 # Release Check
 
@@ -25,6 +25,11 @@ Collect the relevant project files, constraints, current behavior, and verificat
 4. Confirm the exact target and required privileged capability before any external or deployment action.
 5. Make the smallest justified decisions or changes, keeping assumptions explicit.
 6. Verify the result with concrete evidence appropriate to the task and report unresolved risks.
+
+## Scoped Release Readiness
+Verify the requested release target and compatibility impact, version consistency, changelog, dependency and provenance records, focused tests, and reproducibility of the artifact. Inspect package contents for unintended credentials, configuration, local planning data, and temporary files. Identify which runtime/platform claims have direct evidence and which remain untested.
+
+Keep release preparation separate from authorization to commit, push, publish, deploy, or run upstream lifecycle/auto-update hooks. Report concrete blockers with the affected component and next executable check. Do not import a full lifecycle framework to duplicate existing architecture, design review, QA, or release skills.
 
 ## Decision Rules
 - Distinguish observed evidence from assumptions.

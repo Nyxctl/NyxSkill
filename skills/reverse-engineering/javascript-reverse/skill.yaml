@@ -1,0 +1,68 @@
+{
+  "id": "nyx.reverse-engineering.javascript-reverse",
+  "name": "Javascript Reverse",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "reverse-engineering.javascript-reverse",
+  "type": "domain",
+  "profiles": [
+    "reverse-engineering"
+  ],
+  "description": "Recover structure and data flow from minified JavaScript, bundles, extensions and Electron packages without evaluating target code.",
+  "routing": {
+    "priority": 80,
+    "triggers": {
+      "keywords": [
+        "minified javascript",
+        "javascript reverse",
+        "electron analysis",
+        "bundle analysis",
+        "extension reverse"
+      ],
+      "intents": [
+        "javascript-reverse"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [
+      "nyx.reverse-engineering.reverse-triage"
+    ],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write",
+      "shell"
+    ]
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "nyx-native",
+    "source": null,
+    "adapted_from": null,
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

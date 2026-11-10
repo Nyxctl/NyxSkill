@@ -1,0 +1,25 @@
+{
+  "id": "nyx.reverse-engineering",
+  "name": "Nyx Reverse Engineering Pack",
+  "version": "1.0.0",
+  "api_version": 1,
+  "namespace": "nyx.reverse-engineering",
+  "profiles": [
+    "reverse-engineering"
+  ],
+  "skills": [
+    "nyx.reverse-engineering.reverse-triage",
+    "nyx.reverse-engineering.binary-analysis",
+    "nyx.reverse-engineering.dotnet-reverse",
+    "nyx.reverse-engineering.android-reverse",
+    "nyx.reverse-engineering.javascript-reverse",
+    "nyx.reverse-engineering.protocol-analysis",
+    "nyx.reverse-engineering.firmware-analysis",
+    "nyx.reverse-engineering.reverse-report"
+  ],
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  },
+  "trust": "first-party"
+}

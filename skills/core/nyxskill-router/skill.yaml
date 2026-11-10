@@ -1,14 +1,14 @@
 {
   "id": "nyx.core.nyxskill-router",
   "name": "NyxSkill",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "api_version": 1,
   "category": "core.router",
   "type": "process",
   "profiles": [
     "universal"
   ],
-  "description": "Entry-point router for explicit @NyxSkill requests; resolve profiles, select the minimum relevant canonical skills, enforce risk/capability policy, and end with verification.",
+  "description": "Choose minimal canonical skills and available host capabilities; distinguish plugin installation, tool exposure, auth and authorization.",
   "routing": {
     "priority": 999,
     "exclusive_group": "nyx-entrypoint",

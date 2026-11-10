@@ -39,3 +39,6 @@ Use fresh evidence: tests, static checks, source comparison, runtime inspection,
 
 ## Handoff / Completion
 Report what was done, what was verified, and any remaining uncertainty or follow-up.
+
+## Project learning records
+When project learning is enabled and writes are in scope, capture a reusable failure or correction with `nyxskill learn record --from FILE --project PATH`. Use a lesson for an observed failure and a next check. Use a procedure for repeatable steps and expected checks. Check existing records first. Keep raw logs, secrets, and unrelated project details out of the record. See the repository's Learning Loop guide for the input shape.

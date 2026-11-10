@@ -1,0 +1,68 @@
+{
+  "id": "nyx.reverse-engineering.binary-analysis",
+  "name": "Binary Analysis",
+  "version": "1.0.0",
+  "api_version": 1,
+  "category": "reverse-engineering.binary-analysis",
+  "type": "domain",
+  "profiles": [
+    "reverse-engineering"
+  ],
+  "description": "Inspect native PE/ELF executables and shared libraries using static structures, symbols, disassembly and evidence-backed control flow.",
+  "routing": {
+    "priority": 80,
+    "triggers": {
+      "keywords": [
+        "native binary",
+        "disassemble",
+        "elf analysis",
+        "pe analysis",
+        "binary analysis"
+      ],
+      "intents": [
+        "binary-analysis"
+      ]
+    }
+  },
+  "composition": {
+    "requires": [
+      "nyx.reverse-engineering.reverse-triage"
+    ],
+    "before": [],
+    "after": []
+  },
+  "conflicts_with": [],
+  "capabilities": {
+    "required": [
+      "filesystem.read"
+    ],
+    "optional": [
+      "filesystem.write",
+      "shell"
+    ]
+  },
+  "risk": {
+    "level": "read-only",
+    "destructive": false,
+    "requires_confirmation": false
+  },
+  "runtime": {
+    "supported": [
+      "inwjud",
+      "codex",
+      "claude-code",
+      "cursor",
+      "agents"
+    ]
+  },
+  "provenance": {
+    "origin": "nyx-native",
+    "source": null,
+    "adapted_from": null,
+    "license": "MIT"
+  },
+  "compatibility": {
+    "nyxskill": ">=1.0.0 <2.0.0",
+    "api": "^1"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "id": "nyx.devops.release-check",
   "name": "Release Check",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "api_version": 1,
   "category": "devops.release-check",
   "type": "domain",
